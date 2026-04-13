@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Right-Brained Risk | Revive ERM | Susan Ramonat</title>
+    <meta name="description" content="The role of disposition and temperament in managing risk. Why left-brain frameworks fail in conditions of turbulence, uncertainty, novelty and ambiguity.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Source+Sans+3:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --color-ink: #1a1a1a;
+            --color-paper: #faf9f7;
+            --color-accent: #0656d6;
+            --color-muted: #6b6b6b;
+            --color-rule: #d4d0c8;
+            --font-display: 'Cormorant Garamond', Georgia, serif;
+            --font-body: 'Source Sans 3', system-ui, sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-body);
+            font-size: 17px;
+            line-height: 1.7;
+            color: var(--color-ink);
+            background: var(--color-paper);
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: var(--color-paper);
+            border-bottom: 1px solid var(--color-rule);
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-brand {
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--color-ink);
+            text-decoration: none;
+            letter-spacing: -0.02em;
+        }
+
+        .nav-logo {
+            height: 60px;
+            width: auto;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: var(--color-muted);
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            transition: color 0.2s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--color-accent);
+        }
+
+        /* Article Header */
+        .article-header {
+            padding: 8rem 2rem 4rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .article-meta {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .article-category {
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            color: var(--color-accent);
+        }
+
+        .article-title {
+            font-family: var(--font-display);
+            font-size: clamp(2.5rem, 5vw, 3.5rem);
+            font-weight: 500;
+            line-height: 1.15;
+            letter-spacing: -0.02em;
+            margin-bottom: 1.5rem;
+        }
+
+        .article-subtitle {
+            font-size: 1.35rem;
+            font-weight: 300;
+            color: var(--color-muted);
+            line-height: 1.5;
+        }
+
+        /* Article Content */
+        .article-content {
+            max-width: 700px;
+            margin: 0 auto;
+            padding: 0 2rem 6rem;
+        }
+
+        .article-content h2 {
+            font-family: var(--font-display);
+            font-size: 1.75rem;
+            font-weight: 500;
+            margin: 3rem 0 1.5rem;
+            line-height: 1.3;
+        }
+
+        .article-content h3 {
+            font-family: var(--font-display);
+            font-size: 1.35rem;
+            font-weight: 500;
+            margin: 2.5rem 0 1rem;
+            line-height: 1.3;
+        }
+
+        .article-content p {
+            margin-bottom: 1.5rem;
+            font-weight: 300;
+        }
+
+        .article-content p strong {
+            font-weight: 500;
+            color: var(--color-ink);
+        }
+
+        .article-content blockquote {
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            font-style: italic;
+            line-height: 1.4;
+            color: var(--color-accent);
+            border-left: 3px solid var(--color-accent);
+            padding-left: 2rem;
+            margin: 2.5rem 0;
+        }
+
+        .article-content ul {
+            margin: 1.5rem 0;
+            padding-left: 1.5rem;
+        }
+
+        .article-content li {
+            margin-bottom: 0.75rem;
+            font-weight: 300;
+        }
+
+        .pullquote {
+            background: var(--color-ink);
+            color: var(--color-paper);
+            padding: 3rem;
+            margin: 3rem -2rem;
+            text-align: center;
+        }
+
+        .pullquote p {
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            font-style: italic;
+            line-height: 1.4;
+            margin: 0;
+            opacity: 0.95;
+        }
+
+        .pullquote .attribution {
+            font-family: var(--font-body);
+            font-size: 0.9rem;
+            font-style: normal;
+            margin-top: 1rem;
+            opacity: 0.6;
+        }
+
+        .hemisphere-table {
+            width: 100%;
+            margin: 2rem 0;
+            border-collapse: collapse;
+        }
+
+        .hemisphere-table th {
+            font-family: var(--font-display);
+            font-size: 1.1rem;
+            font-weight: 600;
+            text-align: left;
+            padding: 1rem;
+            border-bottom: 2px solid var(--color-ink);
+        }
+
+        .hemisphere-table th:first-child {
+            color: var(--color-muted);
+        }
+
+        .hemisphere-table th:last-child {
+            color: var(--color-accent);
+        }
+
+        .hemisphere-table td {
+            padding: 0.75rem 1rem;
+            border-bottom: 1px solid var(--color-rule);
+            font-weight: 300;
+        }
+
+        .hemisphere-table td:first-child {
+            color: var(--color-muted);
+        }
+
+        /* CTA Section */
+        .article-cta {
+            max-width: 700px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+            border-top: 1px solid var(--color-rule);
+            text-align: center;
+        }
+
+        .article-cta h3 {
+            font-family: var(--font-display);
+            font-size: 1.75rem;
+            font-weight: 500;
+            margin-bottom: 1rem;
+        }
+
+        .article-cta p {
+            font-weight: 300;
+            color: var(--color-muted);
+            margin-bottom: 2rem;
+        }
+
+        .cta-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            font-size: 0.9rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--color-paper);
+            background: var(--color-ink);
+            text-decoration: none;
+            padding: 1rem 2rem;
+            transition: all 0.3s ease;
+        }
+
+        .cta-button:hover {
+            background: var(--color-accent);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--color-ink);
+            color: var(--color-paper);
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .footer-text {
+            font-size: 0.85rem;
+            opacity: 0.5;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            nav {
+                padding: 1rem;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .article-header {
+                padding: 6rem 1.5rem 3rem;
+            }
+
+            .article-content {
+                padding: 0 1.5rem 4rem;
+            }
+
+            .pullquote {
+                margin: 2rem -1.5rem;
+                padding: 2rem;
+            }
+
+            .hemisphere-table {
+                font-size: 0.9rem;
+            }
+
+            .hemisphere-table th, .hemisphere-table td {
+                padding: 0.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="index.html" class="nav-brand"><img src="logo.png" alt="Revive ERM" class="nav-logo"></a>
+        <ul class="nav-links">
+            <li><a href="index.html#provocation">Why</a></li>
+            <li><a href="index.html#topics">Insights</a></li>
+            <li><a href="index.html#about">About</a></li>
+            <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <article>
+        <header class="article-header">
+            <div class="article-meta">
+                <span class="article-category">Risk Leadership</span>
+            </div>
+            <h1 class="article-title">Right-Brained Risk</h1>
+            <p class="article-subtitle">The role of disposition and temperament in managing risk. Why left-brain frameworks fail in conditions of turbulence, uncertainty, novelty and ambiguity.</p>
+        </header>
+
+        <div class="article-content">
+            <p>The global financial crisis. European sovereign debt contagion. The cybersecurity wave. In each case, the data was available. The models existed. The professionals were qualified. And yet the institutions that should have seen it coming were caught flat-footed.</p>
+
+            <p>The common explanation is that these were "black swans" — unpredictable by definition. But that's not quite right. In each case, <strong>someone</strong> saw it coming. Someone connected the dots. Someone raised the flag. The question isn't whether the risk was visible. The question is why the people paid to see it didn't.</p>
+
+            <p>The answer lies not in the quality of their models, but in the way they attend to the world.</p>
+
+            <h2>The Divided Brain</h2>
+
+            <p>Psychiatrist and philosopher Iain McGilchrist has spent decades studying brain hemisphere asymmetry — not the pop-psychology clichés about "creative vs. analytical," but something far more fundamental about how we apprehend reality.</p>
+
+            <p>The left hemisphere, McGilchrist argues, is about <strong>re-presenting</strong> the world: narrow, focused attention on what is already known. It prefers the explicit, the procedural, the rule-based. It builds models and optimizes for utility. It is uncomfortable with ambiguity.</p>
+
+            <p>The right hemisphere is about <strong>being on the lookout</strong>: broad, vigilant attention to context, to the whole, to what might be new or threatening. It tolerates ambiguity. It perceives relationships and uses metaphor. It is open to the unknown.</p>
+
+            <table class="hemisphere-table">
+                <tr>
+                    <th>Left Brain — "Re-presenting"</th>
+                    <th>Right Brain — "On the lookout"</th>
+                </tr>
+                <tr>
+                    <td>Narrow, focused attention</td>
+                    <td>Broad, vigilant attention</td>
+                </tr>
+                <tr>
+                    <td>Materialist and reductive</td>
+                    <td>Holistic and nuanced</td>
+                </tr>
+                <tr>
+                    <td>Propositional, procedural, rules-based</td>
+                    <td>Perceptive and participative</td>
+                </tr>
+                <tr>
+                    <td>Model-making and utility</td>
+                    <td>Openness and flexibility</td>
+                </tr>
+                <tr>
+                    <td>Prefers what it knows</td>
+                    <td>Tolerates ambiguity and the unknown</td>
+                </tr>
+            </table>
+
+            <p>Both modes are essential. The problem arises when one dominates — when the re-presenting mode crowds out the lookout mode, when the model becomes more real than the world it represents.</p>
+
+            <p>Modern enterprise risk management is almost entirely a left-brain enterprise.</p>
+
+            <h2>TUNA Is Here to Stay</h2>
+
+            <p>The Oxford Scenario Planning Approach introduced a useful acronym: <strong>TUNA</strong> — Turbulence, Uncertainty, Novelty, and Ambiguity. These are the conditions under which left-brain frameworks fail, because historical data doesn't predict novel situations, procedural rules don't capture ambiguous contexts, and narrow attention misses the emerging threat at the periphery.</p>
+
+            <p>TUNA isn't an occasional disruption. It's the permanent operating environment. Digital and physical domains are now integrated. Supply chains span continents. A submarine cable cut in the South China Sea affects operations in Pennsylvania. An earthquake in India's National Capital Region cascades through your outsourced development team. A drought stresses the grid that powers your cloud provider.</p>
+
+            <p>The outside world — geopolitical, macroeconomic, climatic, infrastructural — is no longer external to your risk model. It <em>is</em> your risk model. And left-brain frameworks weren't built to see it.</p>
+
+            <div class="pullquote">
+                <p>"Our knowledge of the way things work, in society and in nature, comes trailing clouds of vagueness. Vast ills have followed a belief in certainty."</p>
+                <span class="attribution">— Kenneth Arrow, Nobel laureate in Economics</span>
+            </div>
+
+            <h2>Wachovia: A Case Study in Hemispheric Failure</h2>
+
+            <p>In 2007, the quantitative models at most financial institutions showed acceptable counterparty exposure. The historical data supported the assumptions. The regulatory boxes were checked.</p>
+
+            <p>But the left-brain view missed what mattered: the <strong>catastrophic balance sheet implications</strong> if mortgage assumptions failed at scale. This wasn't a question of counterparty credit limits or VaR calculations. It was a question of institutional survival — whether the capital base could absorb losses of that magnitude, whether liquidity would evaporate, whether the bank would exist in twelve months.</p>
+
+            <p>Wachovia's stock peaked at $90 billion in April 2006. The Golden West acquisition — $25.5 billion for a California mortgage lender at the top of the market — was a left-brain decision: the models supported it, the deal metrics worked, the growth trajectory looked good. What the models didn't show was the world outside the model: the rot in mortgage origination, the interconnected fragility of the securitization chain, the way a housing correction could cascade into existential crisis.</p>
+
+            <p>The tells were there for anyone watching with right-brain attention. In May 2008, Wachovia appointed a new general counsel — one who specialized in protecting boards of directors from litigation. A month later, the CEO resigned. The CFO followed. These weren't model outputs. They were pattern signals: leadership preparing for the worst while the official risk metrics still showed green.</p>
+
+            <p>By September 2008, a "silent run" following the Washington Mutual collapse triggered the endgame. Wells Fargo acquired what remained for $11.5 billion.</p>
+
+            <p>The data to foresee this was available. But seeing it required right-brain attention: broad vigilance, tolerance for uncomfortable implications, willingness to read the signals that don't fit in a spreadsheet.</p>
+
+            <h2>What Right-Brained Risk Requires</h2>
+
+            <p>This isn't about replacing quantitative analysis with intuition. It's about weaving the two modes together — using left-brain precision where it applies, while maintaining right-brain vigilance for what lies outside the frame.</p>
+
+            <p>It requires asking different questions:</p>
+
+            <ul>
+                <li><strong>To what do we attend?</strong> Are we focused only on what we already know, or scanning for what we don't?</li>
+                <li><strong>What do we perceive?</strong> Are we seeing the model, or the world the model represents?</li>
+                <li><strong>What narratives do we create or take in?</strong> Are we telling ourselves a story that makes us comfortable?</li>
+                <li><strong>How do we respond?</strong> Do we have the institutional courage to act on uncomfortable truths?</li>
+            </ul>
+
+            <p>It requires different capabilities: cross-disciplinary education that connects risk to geopolitics, infrastructure, and systems thinking. Scenario planning that takes uncomfortable possibilities seriously. Reporting that tells a story rather than presenting a data dump.</p>
+
+            <p>And it requires awareness. Awareness of which hemisphere we favor, individually and institutionally. Awareness that the mode of attention shapes what we can see. Awareness that in conditions of TUNA, the lookout function is not optional.</p>
+
+            <h2>The Bottom Line</h2>
+
+            <p>The left brain is necessary but not sufficient. Quantitative models are tools, not answers. Regulatory frameworks are floors, not ceilings. Risk registers capture the known, not the emerging.</p>
+
+            <p>If you want an ERM program that actually protects the enterprise — that would have told you about Wachovia before the acquisition, about European sovereign contagion before the crisis, about cyber exposure before the breach wave — you need to make room for right-brain risk.</p>
+
+            <p>That means getting the basics right first: governance, documentation, process, the foundational ERM infrastructure that earns credibility with regulators and boards. But it also means building the capacity to see what the basics can't capture — the emerging, the novel, the ambiguous, the outside world pressing in.</p>
+
+            <p>TUNA is here to stay. The question is whether your risk function is equipped to navigate it.</p>
+        </div>
+    </article>
+
+    <div class="article-cta">
+        <h3>Ready to revive your ERM program?</h3>
+        <p>Foundational builds. Team coaching. Emerging risk engagements. Let's talk about what right-brained risk looks like for your organization.</p>
+        <a href="index.html#contact" class="cta-button">Start a Conversation</a>
+    </div>
+
+    <footer>
+        <p class="footer-text">Revive ERM is a wholly owned subsidiary of Spiritus Partners, Inc. &copy; 2026. All rights reserved.</p>
+    </footer>
+</body>
+</html>
