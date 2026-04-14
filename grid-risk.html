@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AI Data Centers Are Breaking the Grid | Revive ERM | Susan Ramonat</title>
-    <meta name="description" content="Your cloud contract and Business Interruption insurance policy don't cover what happens next. The three-leg gap in enterprise risk coverage is widening.">
+    <meta name="description" content="AWS, Azure, and Google Cloud contracts treat grid events as force majeure. Your DR plan inherits that exclusion. Your Business Interruption policy won't pay. The cascade is already built in.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Source+Sans+3:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -322,7 +322,7 @@
 </head>
 <body>
     <nav>
-        <a href="index.html" class="nav-brand"><img src="logo.png" alt="Revive ERM" class="nav-logo"></a>
+        <a href="/revive-erm/" class="nav-brand"><img src="logo.png" alt="Revive ERM" class="nav-logo"></a>
         <ul class="nav-links">
             <li><a href="index.html#provocation">Why</a></li>
             <li><a href="index.html#topics">Insights</a></li>
@@ -337,13 +337,13 @@
                 <span class="article-category">Emerging Risk</span>
             </div>
             <h1 class="article-title">AI Data Centers Are Breaking the Grid</h1>
-            <p class="article-subtitle">Your cloud contract and Business Interruption insurance policy don't cover what happens next. The three-leg gap is widening as power demand outstrips supply.</p>
+            <p class="article-subtitle">Your cloud contract excludes it. Your DR plan inherits that exclusion. Your Business Interruption insurance policy won't pay when the cloud provider invokes force majeure. The cascade is already built into your contracts.</p>
         </header>
 
         <div class="article-content">
             <p>The numbers are staggering. AI model training runs now consume as much electricity as small cities. Hyperscale data centers are signing power purchase agreements that exceed the capacity of regional grids. And the growth curve shows no sign of flattening.</p>
 
-            <p>This is creating a new category of enterprise risk that most organizations haven't mapped — and their existing insurance coverage doesn't address. The gap sits at the intersection of three instruments that were never designed to work together: your cloud services agreement, your Business Interruption insurance policy, and your business continuity and disaster recovery plan.</p>
+            <p>This is creating a new category of enterprise risk that most organizations haven't mapped — and their existing contracts have already locked in the exposure. The gap isn't that three instruments weren't designed to work together. It's that they form a cascade: your cloud contract is the source document, your DR plan derives from its provisions, and your Business Interruption insurance policy won't pay when the cloud provider's exclusions apply.</p>
 
             <h2>The Power Demand Problem</h2>
 
@@ -357,25 +357,33 @@
                 <p>"Your cloud provider's SLA doesn't guarantee the electricity will stay on."</p>
             </div>
 
-            <h2>The Three-Leg Gap</h2>
+            <h2>The Cascade</h2>
 
-            <p>Most enterprises have moved critical workloads to the cloud with the assumption that reliability is someone else's problem. That assumption is about to be tested. Here's where the coverage gaps emerge:</p>
+            <p>AWS, Azure, and Google Cloud all treat extreme weather and grid events as force majeure — no damages, no SLA-style liability. The language is explicit: "electrical or power outages," "power blackout," "acts of God," "natural disasters." When a climate-driven grid event hits, the cloud provider is contractually protected.</p>
+
+            <p>But that's just the first link. Here's how the cascade unfolds:</p>
 
             <div class="gap-diagram">
-                <h4>The Gap Analysis</h4>
+                <h4>The Cascade</h4>
                 <div class="gap-item">
                     <span class="gap-number">1.</span>
-                    <span class="gap-text"><strong>Cloud Contract:</strong> Your agreement with AWS, Azure, or GCP includes uptime SLAs — but read the force majeure clauses. Grid instability, rolling blackouts, and power rationing are almost certainly excluded. The credits you'd receive for downtime don't begin to cover your actual business losses.</span>
+                    <span class="gap-text"><strong>Cloud Contract:</strong> AWS, Azure, and GCP all explicitly exclude liability for grid-related outages. The force majeure clauses cover "electrical or power outages, utilities or other telecommunications failures, earthquake, storms or other elements of nature." When the grid fails, your cloud provider invokes the exclusion. Credits — if any — are your sole remedy. Damages are off the table.</span>
                 </div>
                 <div class="gap-item">
                     <span class="gap-number">2.</span>
-                    <span class="gap-text"><strong>Business Interruption Insurance Policy:</strong> Traditional BI coverage assumes physical damage to your property. Cloud outages don't trigger most policies. Even "contingent business interruption" coverage typically requires physical damage to a supplier's property — and a grid constraint isn't damage, it's capacity management.</span>
+                    <span class="gap-text"><strong>DR Plan:</strong> The failover regions specified in those contracts — and the DR plans derived from contract provisions — are also in stressed markets, or route through one. None of the big three contractually promise automatic cross-region failover when there's region-wide impact due to weather or grid stress. They provide building blocks and some platform-level failover, but the architecture burden sits with you. When your primary region fails, your backup may be competing for the same constrained power.</span>
                 </div>
                 <div class="gap-item">
                     <span class="gap-number">3.</span>
-                    <span class="gap-text"><strong>Business Continuity and Disaster Recovery Plan:</strong> Your BCP/DR likely assumes regional failover. But if the constraint is grid-wide — affecting PJM, MISO, or ERCOT markets that serve New York, Boston, Philadelphia, DC, Chicago, Minneapolis, and Dallas-Fort Worth — or if your backup region is competing for the same limited power, failover doesn't solve the problem. It just moves it.</span>
+                    <span class="gap-text"><strong>Business Interruption Insurance Policy:</strong> Traditional BI coverage assumes physical damage to your property. Cloud outages don't trigger most policies. Even "contingent business interruption" coverage typically requires physical damage to a supplier's property — and a grid constraint isn't damage, it's capacity management. When the cloud provider's force majeure exclusion applies, the BI claim gets denied.</span>
                 </div>
             </div>
+
+            <p>The cloud provider invokes the exclusion. Failover fails because the backup region is also constrained. The BI claim gets denied because there's no covered damage. The DR plan is worthless.</p>
+
+            <h2>The Geography</h2>
+
+            <p>This isn't abstract. The stressed grid markets are PJM, MISO, and ERCOT — which means the cities at risk include New York, Boston, Philadelphia, DC, Chicago, Minneapolis, and Dallas-Fort Worth. The major cloud regions serving these markets share infrastructure dependencies. A heat dome, wildfire taking out transmission, or winter storm doesn't respect availability zone boundaries.</p>
 
             <h2>The Timing Problem</h2>
 
@@ -401,9 +409,9 @@
 
             <h2>The Bottom Line</h2>
 
-            <p>AI is rewriting the assumptions that underpin your cloud strategy, your insurance coverage, and your business continuity planning. The three-leg gap — cloud contract, Business Interruption insurance policy, BCP/DR plan — represents a category of exposure that didn't exist five years ago and will be acute within three.</p>
+            <p>The contracts, policies, and plans weren't written to work together — but they do work together, as a cascade that leaves you exposed. The cloud contract is the source document. The DR plan inherits its limitations. The BI policy fails when the cloud exclusion triggers.</p>
 
-            <p>The question isn't whether grid constraints will affect enterprise operations. The question is whether you'll discover your coverage gaps before or after they're tested.</p>
+            <p>The question isn't whether grid constraints will affect enterprise operations. The question is whether you'll discover the cascade before or after it's tested.</p>
         </div>
     </article>
 
