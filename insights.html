@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Insights | Revive ERM | Susan Ramonat</title>
+    <meta name="description" content="Analysis of emerging risks that conventional ERM frameworks don't capture. AI, infrastructure, vendor risk, and the outside world pressing in.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Source+Sans+3:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --color-ink: #1a1a1a;
+            --color-paper: #faf9f7;
+            --color-accent: #0656d6;
+            --color-muted: #6b6b6b;
+            --color-rule: #d4d0c8;
+            --font-display: 'Cormorant Garamond', Georgia, serif;
+            --font-body: 'Source Sans 3', system-ui, sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-body);
+            font-size: 17px;
+            line-height: 1.7;
+            color: var(--color-ink);
+            background: var(--color-paper);
+            -webkit-font-smoothing: antialiased;
+        }
+
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: var(--color-paper);
+            border-bottom: 1px solid var(--color-rule);
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-brand {
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--color-ink);
+            text-decoration: none;
+            letter-spacing: -0.02em;
+        }
+
+        .nav-logo {
+            height: 60px;
+            width: auto;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: var(--color-muted);
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            transition: color 0.2s ease;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: var(--color-accent);
+        }
+
+        .page-header {
+            padding: 10rem 2rem 4rem;
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .page-title {
+            font-family: var(--font-display);
+            font-size: clamp(2.5rem, 5vw, 3.5rem);
+            font-weight: 500;
+            line-height: 1.15;
+            letter-spacing: -0.02em;
+            margin-bottom: 1rem;
+        }
+
+        .page-subtitle {
+            font-size: 1.25rem;
+            font-weight: 300;
+            color: var(--color-muted);
+        }
+
+        .insights-list {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 2rem 6rem;
+        }
+
+        .insight-item {
+            display: block;
+            padding: 3rem 0;
+            border-bottom: 1px solid var(--color-rule);
+            text-decoration: none;
+            color: inherit;
+            transition: all 0.3s ease;
+        }
+
+        .insight-item:first-child {
+            border-top: 1px solid var(--color-rule);
+        }
+
+        .insight-item:hover {
+            padding-left: 1rem;
+        }
+
+        .insight-item:hover .insight-title {
+            color: var(--color-accent);
+        }
+
+        .insight-category {
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            color: var(--color-accent);
+            margin-bottom: 0.75rem;
+        }
+
+        .insight-title {
+            font-family: var(--font-display);
+            font-size: 1.75rem;
+            font-weight: 500;
+            line-height: 1.3;
+            margin-bottom: 0.75rem;
+            transition: color 0.2s ease;
+        }
+
+        .insight-excerpt {
+            font-size: 1rem;
+            font-weight: 300;
+            color: var(--color-muted);
+            line-height: 1.7;
+            max-width: 700px;
+        }
+
+        footer {
+            background: var(--color-ink);
+            color: var(--color-paper);
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .footer-text {
+            font-size: 0.85rem;
+            opacity: 0.5;
+        }
+
+        .footer-text a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        @media (max-width: 768px) {
+            nav {
+                padding: 1rem;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .page-header {
+                padding: 7rem 1.5rem 3rem;
+            }
+
+            .insights-list {
+                padding: 0 1.5rem 4rem;
+            }
+
+            .insight-item {
+                padding: 2rem 0;
+            }
+
+            .insight-item:hover {
+                padding-left: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="index.html" class="nav-brand"><img src="logo.png" alt="Revive ERM" class="nav-logo"></a>
+        <ul class="nav-links">
+            <li><a href="index.html#services">Services</a></li>
+            <li><a href="insights.html" class="active">Insights</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <header class="page-header">
+        <h1 class="page-title">Insights</h1>
+        <p class="page-subtitle">Emerging risks that conventional ERM frameworks don't capture.</p>
+    </header>
+
+    <main class="insights-list">
+        <a href="offshore-it-risk.html" class="insight-item">
+            <p class="insight-category">Emerging Risk</p>
+            <h2 class="insight-title">Your Offshore IT Provider's Business Model Is Breaking. Your Vendor Risk Program Isn't Watching.</h2>
+            <p class="insight-excerpt">India's tech sector shed over 100,000 jobs in 2025. The cuts are concentrated in mid- and senior-level roles — the people who understood your environment. Nobody's tracking which of that knowledge applies to your systems.</p>
+        </a>
+
+        <a href="grid-risk.html" class="insight-item">
+            <p class="insight-category">Emerging Risk</p>
+            <h2 class="insight-title">AI Data Centers May Put Your Cloud Contracts and Failover Protections at Risk</h2>
+            <p class="insight-excerpt">The force majeure clause in your cloud contract may undercut your BCP/DR plan and your business interruption insurance protections in the same event.</p>
+        </a>
+
+        <a href="right-brained-risk.html" class="insight-item">
+            <p class="insight-category">Risk Leadership</p>
+            <h2 class="insight-title">Right-Brained Risk</h2>
+            <p class="insight-excerpt">The role of disposition and temperament in managing risk. Why left-brain frameworks fail in conditions of turbulence, uncertainty, novelty and ambiguity.</p>
+        </a>
+    </main>
+
+    <footer>
+        <p class="footer-text">Revive ERM is a wholly owned subsidiary of <a href="#">Spiritus Partners, Inc.</a> &copy; 2026. All rights reserved.</p>
+    </footer>
+</body>
+</html>
