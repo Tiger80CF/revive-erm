@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI Data Centers Are Breaking the Grid | Revive ERM | Susan Ramonat</title>
-    <meta name="description" content="AWS, Azure, and Google Cloud contracts treat grid events as force majeure. Your DR plan inherits that exclusion. Your Business Interruption policy won't pay. The cascade is already built in.">
+    <title>AI Data Centers May Put Your Cloud Contracts and Failover Protections at Risk | Revive ERM | Susan Ramonat</title>
+    <meta name="description" content="The force majeure clause in your cloud contract may undercut your BCP/DR plan and your business interruption insurance protections in the same event.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Source+Sans+3:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -193,55 +193,51 @@
             font-style: italic;
             line-height: 1.4;
             margin: 0;
-            opacity: 0.95;
         }
 
         .gap-diagram {
-            background: #f5f3ef;
+            background: #f4f3f1;
             padding: 2.5rem;
-            margin: 2.5rem 0;
+            margin: 2rem 0;
             border-left: 4px solid var(--color-accent);
         }
 
         .gap-diagram h4 {
             font-family: var(--font-display);
-            font-size: 1.1rem;
+            font-size: 1.25rem;
             font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-            color: var(--color-accent);
             margin-bottom: 1.5rem;
+            color: var(--color-accent);
         }
 
         .gap-item {
             display: flex;
             gap: 1rem;
-            margin-bottom: 1.25rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .gap-item:last-child {
+            margin-bottom: 0;
         }
 
         .gap-number {
             font-family: var(--font-display);
-            font-size: 1.25rem;
+            font-size: 1.5rem;
             font-weight: 600;
             color: var(--color-accent);
-            min-width: 2rem;
+            flex-shrink: 0;
+            width: 2rem;
         }
 
         .gap-text {
             font-weight: 300;
+            line-height: 1.6;
         }
 
-        .gap-text strong {
-            font-weight: 500;
-            color: var(--color-ink);
-        }
-
-        /* CTA Section */
+        /* Article CTA */
         .article-cta {
-            max-width: 700px;
-            margin: 0 auto;
+            background: #f4f3f1;
             padding: 4rem 2rem;
-            border-top: 1px solid var(--color-rule);
             text-align: center;
         }
 
@@ -336,88 +332,94 @@
             <div class="article-meta">
                 <span class="article-category">Emerging Risk</span>
             </div>
-            <h1 class="article-title">AI Data Centers Are Breaking the Grid</h1>
-            <p class="article-subtitle">Your cloud contract excludes it. Your DR plan inherits that exclusion. Your Business Interruption insurance policy won't pay when the cloud provider invokes force majeure. The cascade is already built into your contracts.</p>
+            <h1 class="article-title">AI Data Centers May Put Your Cloud Contracts and Failover Protections at Risk</h1>
+            <p class="article-subtitle">The force majeure clause in your cloud contract may undercut your BCP/DR plan and your business interruption insurance protections in the same event.</p>
         </header>
 
         <div class="article-content">
-            <p>The numbers are staggering. AI model training runs now consume as much electricity as small cities. Hyperscale data centers are signing power purchase agreements that exceed the capacity of regional grids. And the growth curve shows no sign of flattening.</p>
+            <p>AI data center demand is accelerating faster than grid infrastructure can support it. When regional capacity constraints hit, many enterprises will discover that their cloud contracts, BCP/DR plans, and business interruption policies cascade unfavorably as each instrument's provisions and exclusions compound risks they're meant to protect against.</p>
 
-            <p>This is creating a new category of enterprise risk that most organizations haven't mapped — and their existing contracts have already locked in the exposure. The gap isn't that three instruments weren't designed to work together. It's that they form a cascade: your cloud contract is the source document, your DR plan derives from its provisions, and your Business Interruption insurance policy won't pay when the cloud provider's exclusions apply.</p>
+            <p>Three instruments that should be complementary instead create unrecognized, potentially costly gaps that undermine your team's efforts to restore business operations quickly and cost-effectively.</p>
 
             <h2>The Power Demand Problem</h2>
 
-            <p>Global data center electricity consumption is projected to double by 2028. AI workloads are the primary driver — a single large language model training run can consume more electricity than 100 US households use in a year.</p>
+            <p>Global data center electricity consumption is projected to double by 2028, with AI workloads as the primary driver. A single large language model training run can consume more electricity than 100 US households use in a year.</p>
 
-            <p>The grid wasn't built for this. Utilities are scrambling to add capacity, but new generation and transmission infrastructure takes years to permit and build. In the meantime, the hyperscalers are competing for every available megawatt.</p>
+            <p>Transmission and generation capacity takes years to permit and build. The demand curve isn't waiting.</p>
 
-            <p>The result is a growing mismatch between where compute capacity exists and where reliable power can be delivered. Some regions are already seeing constraints. More will follow.</p>
+            <p>The result is a growing mismatch between where compute capacity exists and where reliable power can be delivered. Some regions are already seeing constraints. The EIA forecasts that ERCOT and PJM will see the highest load growth between 2025 and 2027—averaging 10% and 3% annually, respectively. PJM's independent market monitor found that data center load growth was the primary driver of an 82% increase in capacity market revenues in the 2026/27 auction.</p>
 
             <div class="pullquote">
-                <p>"Your cloud provider's SLA doesn't guarantee the electricity will stay on."</p>
+                <p>Your SLA may not guarantee cloud connectivity will continue working as needed.</p>
             </div>
 
             <h2>The Cascade</h2>
-
-            <p>AWS, Azure, and Google Cloud all treat extreme weather and grid events as force majeure — no damages, no SLA-style liability. The language is explicit: "electrical or power outages," "power blackout," "acts of God," "natural disasters." When a climate-driven grid event hits, the cloud provider is contractually protected.</p>
-
-            <p>But that's just the first link. Here's how the cascade unfolds:</p>
 
             <div class="gap-diagram">
                 <h4>The Cascade</h4>
                 <div class="gap-item">
                     <span class="gap-number">1.</span>
-                    <span class="gap-text"><strong>Cloud Contract:</strong> AWS, Azure, and GCP all explicitly exclude liability for grid-related outages. The force majeure clauses cover "electrical or power outages, utilities or other telecommunications failures, earthquake, storms or other elements of nature." When the grid fails, your cloud provider invokes the exclusion. Credits — if any — are your sole remedy. Damages are off the table.</span>
+                    <span class="gap-text"><strong>Cloud Contract:</strong> AWS, Azure, and GCP all explicitly exclude liability for grid-related outages. The force majeure clauses typically cover "electrical or power outages," "utilities or other telecommunications failures," "acts of God," and "natural disasters." When the grid fails, your cloud provider invokes the exclusion. Credits—if any—are typically your sole remedy. Damages are generally excluded.</span>
                 </div>
                 <div class="gap-item">
                     <span class="gap-number">2.</span>
-                    <span class="gap-text"><strong>DR Plan:</strong> The failover regions specified in those contracts — and the DR plans derived from contract provisions — are also in stressed markets, or route through one. None of the big three contractually promise automatic cross-region failover when there's region-wide impact due to weather or grid stress. They provide building blocks and some platform-level failover, but the architecture burden sits with you. When your primary region fails, your backup may be competing for the same constrained power.</span>
+                    <span class="gap-text"><strong>Business Continuity/Disaster Recovery Plan (BCP/DR):</strong> The failover regions specified in those contracts—and the BCP/DR plans derived from contract provisions—may also be in stressed markets, or route through one. None of the major providers contractually promise automatic cross-region failover when there's region-wide impact due to weather or grid stress. They provide building blocks and some platform-level failover, but the architecture burden sits with you. When your primary region fails, your backup may be competing for the same constrained power. The October 2025 AWS outage affecting US-East-1 disrupted over 3,500 companies across more than 60 countries. The July 2025 Azure East US outage was explicitly caused by demand outstripping available capacity.</span>
                 </div>
                 <div class="gap-item">
                     <span class="gap-number">3.</span>
-                    <span class="gap-text"><strong>Business Interruption Insurance Policy:</strong> Traditional BI coverage assumes physical damage to your property. Cloud outages don't trigger most policies. Even "contingent business interruption" coverage typically requires physical damage to a supplier's property — and a grid constraint isn't damage, it's capacity management. When the cloud provider's force majeure exclusion applies, the BI claim gets denied.</span>
+                    <span class="gap-text"><strong>Business Interruption Insurance Policy:</strong> Traditional BI coverage assumes physical damage to your property. Cloud outages typically don't trigger most policies. Even contingent business interruption coverage usually requires physical damage to a supplier's property—and a grid constraint isn't damage, it's capacity management. When the cloud provider's force majeure exclusion applies, the BI claim may be denied.</span>
                 </div>
             </div>
 
-            <p>The cloud provider invokes the exclusion. Failover fails because the backup region is also constrained. The BI claim gets denied because there's no covered damage. The DR plan is worthless.</p>
+            <div class="pullquote">
+                <p>These three documents are rarely read against each other. That's where the exposure lives.</p>
+            </div>
 
             <h2>The Geography</h2>
 
-            <p>This isn't abstract. The stressed grid markets are PJM, MISO, and ERCOT — which means the cities at risk include New York, Boston, Philadelphia, DC, Chicago, Minneapolis, and Dallas-Fort Worth. The major cloud regions serving these markets share infrastructure dependencies. A heat dome, wildfire taking out transmission, or winter storm doesn't respect availability zone boundaries.</p>
+            <p>This isn't abstract. Among the most stressed grid markets are PJM, MISO, and ERCOT—which means the cities at risk include New York, Boston, Philadelphia, Washington DC, Chicago, Minneapolis, Dallas-Fort Worth, San Antonio, and Houston.</p>
+
+            <p>PJM is home to the most data centers in the country, concentrated in Northern Virginia. Many of these data centers house cloud services for critical industries such as financial services, health services, utilities, and federal government agencies.</p>
+
+            <p>Starting in summer 2026, PJM will have just enough power to keep the grid reliable. Data centers are connecting faster than new generation can be built. The grid operator has initiated a Critical Issue Fast Path process to address reliability concerns, targeting implementation for the 2028/29 capacity auction—but that's two years away.</p>
+
+            <p>A heat dome, wildfire taking out transmission, or winter storm doesn't respect availability zone boundaries. The major cloud regions serving these markets share infrastructure dependencies.</p>
 
             <h2>The Timing Problem</h2>
 
-            <p>This isn't a 2030 problem. The Swiss Re sigma report from March 2026 documents constraints already emerging in key data center markets. Contract renewal cycles are typically annual. Insurance policies renew annually. The window to address the gap before it materializes is closing.</p>
+            <p>This isn't a 2030 problem. Constraints are already emerging in key data center markets. Contract renewal cycles are typically annual. Insurance policies renew annually.</p>
 
-            <p>Most enterprises will discover this exposure the hard way — when an outage occurs and they learn what their contracts actually say. The sophisticated ones are mapping the gap now, while they still have leverage to negotiate.</p>
+            <p>The window to address the gap before it materializes is closing. Most enterprises will discover this exposure when an outage occurs and they learn what their contracts actually say. The sophisticated ones are mapping the gap now, while they still have leverage to negotiate.</p>
+
+            <div class="pullquote">
+                <p>The window to negotiate is short—what remains of 2026 and early 2027.</p>
+            </div>
 
             <h2>What to Do About It</h2>
 
             <p><strong>Audit your cloud contracts.</strong> Find the force majeure language. Understand exactly what triggers your SLA credits and what voids them. Most enterprises haven't read this section since they signed.</p>
 
-            <p><strong>Review your Business Interruption insurance policy with fresh eyes.</strong> Specifically ask your broker: "If our cloud provider experiences a multi-day outage due to grid constraints — no physical damage, just insufficient power — what's covered?" Get the answer in writing.</p>
+            <p><strong>Review your BI policy with fresh eyes.</strong> Specifically ask your broker: "If our cloud provider experiences a multi-day outage due to grid constraints—no physical damage, just insufficient power—what's covered?" Get the answer in writing.</p>
 
-            <p><strong>Stress-test your BCP/DR.</strong> Model a scenario where your primary and backup regions both face power constraints simultaneously. Where does that leave you? What's the actual recovery path?</p>
+            <p><strong>Stress-test your BCP/DR plan.</strong> Model a scenario where your primary and backup regions both face power constraints simultaneously. Where does that leave you? What's the actual recovery path?</p>
 
-            <p><strong>Consider parametric coverage.</strong> Some insurers are developing products that trigger based on measurable events (grid frequency deviation, wholesale power prices) rather than traditional damage-based triggers. These may fill gaps that conventional Business Interruption insurance can't reach.</p>
+            <p><strong>Consider parametric coverage.</strong> Some insurers are developing products that trigger based on measurable events—grid frequency deviation, wholesale power prices—rather than traditional damage-based triggers. These may fill gaps that conventional BI can't reach.</p>
 
             <p><strong>Build the board case.</strong> This is an emerging risk that most boards haven't considered. The risk committee should understand the exposure before it materializes. Waiting until after an incident is too late to negotiate better terms.</p>
 
-            <blockquote>
-                The enterprises that address this gap in 2026 will have leverage. The ones that wait until 2027 will be renegotiating from a position of weakness — or explaining to their board why they didn't see it coming.
-            </blockquote>
-
             <h2>The Bottom Line</h2>
 
-            <p>The contracts, policies, and plans weren't written to work together — but they do work together, as a cascade that leaves you exposed. The cloud contract is the source document. The DR plan inherits its limitations. The BI policy fails when the cloud exclusion triggers.</p>
+            <p>The contracts, policies, and plans weren't written to work together—but they do work together, as a cascade that leaves you exposed. The cloud contract is the source document. The BCP/DR plan inherits its limitations. The BI policy may fail when the cloud exclusion triggers.</p>
 
             <p>The question isn't whether grid constraints will affect enterprise operations. The question is whether you'll discover the cascade before or after it's tested.</p>
+
+            <p>The window to negotiate is short—what remains of 2026 and early 2027. After that, you're riding whatever coverage you have.</p>
         </div>
     </article>
 
     <div class="article-cta">
         <h3>Map your exposure before it materializes</h3>
-        <p>A focused engagement to audit your cloud contracts, BI coverage, and DR architecture for AI-era grid risk.</p>
+        <p>A focused engagement to audit your cloud contracts, BCP/DR plan, and BI policy for AI-era grid risk.</p>
         <a href="index.html#contact" class="cta-button">Start a Conversation</a>
     </div>
 
