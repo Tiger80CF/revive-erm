@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agentic AI Is in Pilot Across Your Business | Revive ERM | Susan Ramonat</title>
+    <meta name="description" content="Agentic AI is in pilot across asset management, banking, and health insurance. How does the risk function stay credibly engaged before production?">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Source+Sans+3:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --color-ink: #1a1a1a;
+            --color-paper: #faf9f7;
+            --color-accent: #0656d6;
+            --color-muted: #6b6b6b;
+            --color-rule: #d4d0c8;
+            --font-display: 'Cormorant Garamond', Georgia, serif;
+            --font-body: 'Source Sans 3', system-ui, sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-body);
+            font-size: 17px;
+            line-height: 1.7;
+            color: var(--color-ink);
+            background: var(--color-paper);
+            -webkit-font-smoothing: antialiased;
+        }
+
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: var(--color-paper);
+            border-bottom: 1px solid var(--color-rule);
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-brand {
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--color-ink);
+            text-decoration: none;
+            letter-spacing: -0.02em;
+        }
+
+        .nav-logo {
+            height: 60px;
+            width: auto;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: var(--color-muted);
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            transition: color 0.2s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--color-accent);
+        }
+
+        .article-header {
+            padding: 8rem 2rem 4rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .article-meta {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .article-category {
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            color: var(--color-accent);
+        }
+
+        .article-title {
+            font-family: var(--font-display);
+            font-size: clamp(2.5rem, 5vw, 3.5rem);
+            font-weight: 500;
+            line-height: 1.15;
+            letter-spacing: -0.02em;
+            margin-bottom: 1.5rem;
+        }
+
+        .article-subtitle {
+            font-size: 1.35rem;
+            font-weight: 300;
+            color: var(--color-muted);
+            line-height: 1.5;
+        }
+
+        .article-content {
+            max-width: 700px;
+            margin: 0 auto;
+            padding: 0 2rem 6rem;
+        }
+
+        .article-content h2 {
+            font-family: var(--font-display);
+            font-size: 1.75rem;
+            font-weight: 500;
+            margin: 3rem 0 1.5rem;
+            line-height: 1.3;
+        }
+
+        .article-content h3 {
+            font-family: var(--font-display);
+            font-size: 1.35rem;
+            font-weight: 500;
+            margin: 2rem 0 1rem;
+            line-height: 1.3;
+        }
+
+        .article-content p {
+            margin-bottom: 1.5rem;
+            font-weight: 300;
+        }
+
+        .article-content p strong {
+            font-weight: 500;
+            color: var(--color-ink);
+        }
+
+        /* Callout Blocks */
+        .callout {
+            background: var(--color-accent);
+            color: var(--color-paper);
+            padding: 1.5rem 2rem;
+            margin: 2.5rem -2rem;
+            font-weight: 500;
+            font-size: 1.1rem;
+            line-height: 1.5;
+        }
+
+        .callout-question {
+            background: #f4f3f1;
+            color: var(--color-ink);
+            padding: 2rem;
+            margin: 2.5rem 0;
+            font-family: var(--font-display);
+            font-size: 1.25rem;
+            font-style: italic;
+            font-weight: 400;
+            line-height: 1.5;
+            border-left: 4px solid var(--color-accent);
+        }
+
+        .article-cta {
+            background: #f4f3f1;
+            padding: 3rem;
+            margin: 3rem -2rem 0;
+            text-align: center;
+        }
+
+        .article-cta h3 {
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            font-weight: 500;
+            margin-bottom: 1rem;
+        }
+
+        .article-cta p {
+            font-weight: 300;
+            color: var(--color-muted);
+            margin-bottom: 2rem;
+        }
+
+        .cta-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            font-size: 0.9rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--color-paper);
+            background: var(--color-ink);
+            text-decoration: none;
+            padding: 1rem 2rem;
+            transition: all 0.3s ease;
+        }
+
+        .cta-button:hover {
+            background: var(--color-accent);
+        }
+
+        footer {
+            background: var(--color-ink);
+            color: var(--color-paper);
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .footer-text {
+            font-size: 0.85rem;
+            opacity: 0.5;
+        }
+
+        @media (max-width: 768px) {
+            nav {
+                padding: 1rem;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .article-header {
+                padding: 6rem 1.5rem 3rem;
+            }
+
+            .article-content {
+                padding: 0 1.5rem 4rem;
+            }
+
+            .callout {
+                margin: 2rem -1.5rem;
+                padding: 1.5rem;
+            }
+
+            .article-cta {
+                margin: 2rem -1.5rem 0;
+                padding: 2rem 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="index.html" class="nav-brand"><img src="logo.png" alt="Revive ERM" class="nav-logo"></a>
+        <ul class="nav-links">
+            <li><a href="index.html#services">Services</a></li>
+            <li><a href="insights.html">Insights</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <article>
+        <header class="article-header">
+            <div class="article-meta">
+                <span class="article-category">Emerging Risk</span>
+            </div>
+            <h1 class="article-title">Agentic AI Is in Pilot Across Your Business. How Does the Risk Function Ride Alongside?</h1>
+        </header>
+
+        <div class="article-content">
+            <p>Most asset managers, banks, and health insurers are running modest pilots of agentic AI. The agents operate within narrow functional scope — exception handling, reconciliation, first-line triage. They do not run the workflows. They work as enablers within workflows that still rely on people, process, and technology to move the business forward. Confidence grows incrementally as the business line owners closest to the work learn what the tools can and cannot do.</p>
+
+            <p>None of this sits in live production at scale. All of it could, as confidence grows in the coming months and years.</p>
+
+            <h2>Two familiar postures, neither of which fits</h2>
+
+            <p>The risk function has two instinctive postures toward novel technology, and neither works here.</p>
+
+            <p>The first is <strong>gatekeeper</strong>. The risk function slows the pilots down until policy catches up, requires formal sign-offs before scope expands, and demands documented risk assessments before the experiments can do meaningful work. This posture loses credibility quickly with business line owners who can see, in front of them, that the tools produce useful output on real tasks. Gatekeeping trains the business to route around the risk function rather than to it.</p>
+
+            <p>The second is <strong>oracle</strong>. The risk function predicts the risks before pilot data arrives, issuing frameworks and risk taxonomies that anticipate what the technology will do at scale. Oracle posture overstates what can be known. Agentic AI performs unevenly across adjacent tasks — strong on one, weak on the next, for reasons not yet well understood. Frameworks drafted in advance tend to miss the risks that matter and over-specify the ones that don't.</p>
+
+            <p>Neither posture puts the risk function where it needs to be: close enough to the work to see what's happening, early enough to shape the framework before production scope hardens.</p>
+
+            <h2>Three horizons the risk function has to see coming</h2>
+
+            <p>What makes this transition difficult is that it happens in stages, and each stage produces risks the previous stage's framework cannot capture.</p>
+
+            <p><strong>Horizon one: agents as functional contributors within existing workflows.</strong> Today's pilots sit here. The agent handles a defined task within a workflow that still runs on people, process, and technology. Handoffs remain human. The workflow's shape stays intact.</p>
+
+            <p><strong>Horizon two: agents as owners of end-to-end workflows and their handoffs to adjacent workflows.</strong> Over time, confidence and capability grow together. The agent graduates from contributor to orchestrator, taking responsibility for the workflow end to end and managing the joins to workflows upstream and downstream. The workflow still exists in recognizable form. The agent now runs it.</p>
+
+            <p><strong>Horizon three: agents that redefine workflows and their neighbors.</strong> The deepest transition comes last. Existing workflows carry decades of accretion — a step added after a regulatory finding, a handoff introduced because a legacy system could not integrate, a review layer that persists because the person who understood why it was needed has retired. Agents capable of end-to-end ownership will eventually redesign the workflows themselves, eliminating accretion and reshaping adjacent workflows whose own accretion no longer fits.</p>
+
+            <p>The risk function has to see all three horizons coming. A framework built for horizon one cannot protect the business at horizon two, and a framework built for horizon two cannot see horizon three approaching.</p>
+
+            <h2>The sidecar posture</h2>
+
+            <p>A third option exists. The risk function rides alongside the experiments rather than in front of them or behind them. It watches the pilots closely, sees where the tools are being tried, how they touch workflows, and where the agent makes decisions that a human would otherwise make. It sees what human checkpoints remain, and how those checkpoints are expected to change as confidence grows. These observations tell the risk function which risks are becoming material, and in what order.</p>
+
+            <div class="callout-question">Sidecar, not gatekeeper. Sidecar, not oracle.</div>
+
+            <p>Risks arrive in sequence, and the sequence shifts as the horizons change. At horizon one, operational risk moves first through process exceptions and agent behavior drift, with technology risk alongside it through integration architecture and vendor API dependencies. Data privacy and cybersecurity risks grow as the agent's data access expands. Financial and regulatory risks surface as agent decisions affect customer outcomes, financial reporting, or regulated activities.</p>
+
+            <p>At horizons two and three, strategic and systemic risks enter the frame: vendor concentration, governance in workflows without a human accountable at each step, reputational risk when redesigned workflows produce outcomes no one predicted.</p>
+
+            <p>The work of the sidecar posture runs iteratively rather than definitively. Conventional risk assessments assume a stable end state, and pilots have none. Assessments get produced as working documents, revised as pilot scope expands and agent capabilities change. The same iterative logic governs key risk indicators: conventional measures of losses, errors, and incidents arrive too late to help while pilots are the frontier. Leading indicators that catch drift, unevenness, and capability erosion before they surface as losses resist easy definition. They also hold the value.</p>
+
+            <p>Controls designed in parallel evolve as the pilots evolve, adapting toward production-readiness rather than arriving retrofitted after the fact. When the risk function and Internal Audit work alongside the pilot team, the controls framework matures at the same pace as the capability.</p>
+
+            <h2>The RPA memory</h2>
+
+            <p>Financial services, banking, and health insurance ran a version of this before. Robotic process automation arrived a decade ago with a similar arc of modest pilots, growing confidence, and function-by-function expansion into production. RPA ran on rules, behaved deterministically, and offered auditability. It still produced durable governance failures. Bots broke when underlying systems changed. Error surfaces went unnoticed until losses accumulated. Accountability blurred when automation drifted from what it was supposed to do. Control frameworks arrived after production scope had already hardened.</p>
+
+            <p>Agentic AI presents the harder version. Behavior runs non-deterministically, capability boundaries shift across model versions, and vendor updates beyond the enterprise's control change what the agent can do. The cost of arriving late runs higher because the substrate runs harder. The sidecar posture captures what arriving on time looks like.</p>
+
+            <h2>Why the timing matters</h2>
+
+            <p>The window while pilots remain the frontier offers the lowest-cost time to develop the risk assessments, leading key risk indicators, and controls framework that will move with production adoption. Waiting for a stable end state means waiting past the point where the risk function holds leverage.</p>
+
+            <p>Once agentic AI moves into live production workflows — in reconciliation, claims administration, or fraud detection — the framework has to be retrofitted against production behavior rather than developed alongside pilot behavior. Retrofitting runs slower and more expensive than developing in parallel, and carries exposure during the gap.</p>
+
+            <p>The framework need not be complete to be useful. It must move at the same pace as the capability.</p>
+
+            <h2>The Bottom Line</h2>
+
+            <p>Agentic AI moves through pilot and sandbox across reconciliation, claims administration, fraud detection, and other workflows that rely on people, process, and technology working together. Over time, agents will own workflows end to end and eventually redesign them and their neighbors. The gatekeeper and oracle postures cannot position the risk function to arrive at production with a ready framework. The sidecar posture can.</p>
+
+            <p>Right-Brained Risk applied to agentic AI adoption looks like this: broad, vigilant attention riding alongside the experiments, with the capacity to see what's emerging before it fits the framework — while the framework is still being built.</p>
+
+            <p>The window stays open while the pilots are still pilots. It closes as workflows move to production.</p>
+        </div>
+    </article>
+
+    <div class="article-cta">
+        <h3>Ride sidecar with your agentic AI experiments</h3>
+        <p>A focused engagement to observe pilot activity, anticipate operational and compliance risks as scope expands, and build the risk assessments, key risk indicators, and controls framework that move with production adoption.</p>
+        <a href="index.html#contact" class="cta-button">Start a Conversation</a>
+    </div>
+
+    <footer>
+        <p class="footer-text">Revive ERM is a wholly owned subsidiary of Spiritus Partners, Inc. © 2026. All rights reserved.</p>
+    </footer>
+</body>
+</html>
