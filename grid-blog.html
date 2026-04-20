@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Grid Blog Rewrite Draft</title>
+<style>
+body { font-family: Georgia, serif; max-width: 800px; margin: 2rem auto; padding: 0 2rem; line-height: 1.7; color: #1a1a1a; background: #faf9f7; }
+h1 { font-size: 1.8rem; margin-bottom: 1.5rem; }
+h2 { font-size: 1.3rem; margin: 2rem 0 0.75rem; }
+p { margin-bottom: 1rem; }
+hr { border: none; border-top: 1px solid #d4d0c8; margin: 2rem 0; }
+strong { font-weight: 600; }
+em { font-style: italic; color: #6b6b6b; }
+</style>
+</head>
+<body>
+<h1>Your Cloud Infrastructure Runs on a Grid That Wasn't Built for AI. Your Contracts Don't Cover What Happens Next.</h1>
+<p><em>The force majeure clause in your cloud contract, the failover assumptions in your business continuity and disaster recovery plan, and the coverage triggers in your business interruption insurance policy were not written to work together. When the grid fails, they work against each other.</em></p>
+<hr>
+<h2>TLDR</h2>
+<p>AI data center buildout is pushing PJM, MISO, and ISO New England toward their reliability ceilings before extreme weather adds load on top. Asset managers in Boston and New York, insurers and brokers in Hartford, Chicago, and Milwaukee are exposed through the cloud infrastructure their operations depend on. The contracts and policies meant to protect them — cloud contracts, business continuity and disaster recovery plans, and business interruption insurance policies — don't. The window to negotiate better terms is short.</p>
+<hr>
+<h2>The Operational Stake</h2>
+<p>Trading systems, policy administration platforms, and claims processing operations are the operational core of asset managers and insurers. The firms running these systems — in Boston, New York, Hartford, Chicago, and Milwaukee — depend on cloud infrastructure housed in data centers concentrated in Northern Virginia, the Chicago corridor, and New England. Those data centers run on three grid markets: PJM, MISO, and ISO New England.</p>
+<p>Each of those grid markets is facing a compounding threat that the contracts and policies governing cloud dependency were not designed to address.</p>
+<p>The first stressor is structural. AI data center buildout is consuming grid capacity faster than transmission and generation can be built. The demand curve is not waiting.</p>
+<p>The second stressor compounds the first. Extreme weather events — heat domes, winter storms, wildfires — stress the same grid markets that AI data centers are already pushing toward their reliability ceilings. When that happens, failover doesn't save you. The backup region sits in the same stressed market as the primary.</p>
+<p>When these two stressors hit together, the cloud infrastructure that asset managers and insurers depend on faces a failure scenario their contracts, continuity plans, and insurance policies were not written to handle.</p>
+<hr>
+<h2>The Cascade</h2>
+<p>Three instruments that should be complementary instead create a cascade of unrecognized exposure.</p>
+<p><strong>Cloud Contract</strong></p>
+<p>AWS, Azure, and Google Cloud all explicitly exclude liability for grid-related outages. Force majeure clauses typically cover electrical or power outages, utilities or telecommunications failures, acts of God, and natural disasters. When the grid fails, the cloud provider invokes the exclusion. Credits — if any — are typically the sole remedy. Damages are generally excluded.</p>
+<p>The exposure is not theoretical. In July 2025, an Azure East US outage was caused explicitly by demand outstripping available capacity. In October 2025, an AWS US-East-1 outage disrupted over 3,500 companies across 60 countries. In both cases, the force majeure exclusion applied.</p>
+<p><strong>Business Continuity and Disaster Recovery Plan</strong></p>
+<p>The failover regions in most business continuity and disaster recovery plans were derived from the same cloud contracts that exclude grid-related outages. The plan assumes the backup region is available. It may not be.</p>
+<p>None of the major cloud providers contractually promise automatic cross-region failover when there is region-wide impact due to weather or grid stress. When a primary region fails due to grid stress, the backup region may be competing for the same constrained power.</p>
+<p><strong>Business Interruption Insurance Policy</strong></p>
+<p>Traditional business interruption insurance coverage assumes physical damage to the insured's property. Cloud outages typically do not trigger most policies. Even contingent business interruption coverage usually requires physical damage to a supplier's property. A grid capacity shortfall is not damage. It is capacity management.</p>
+<p>When the cloud provider's force majeure exclusion applies, the business interruption insurance claim may be denied on the same grounds. The exclusion and the coverage trigger are misaligned in exactly the scenario most likely to produce a significant operational disruption.</p>
+<p>These three documents are rarely read against each other. That is where the exposure lives.</p>
+<hr>
+<h2>The Geography</h2>
+<p><strong>PJM</strong></p>
+<p>PJM is home to more data centers than any other grid market in the country. The concentration is in Northern Virginia, which houses cloud infrastructure serving financial services, healthcare, federal agencies, and a significant portion of the asset management industry's operational systems. PJM's independent market monitor found that data center load growth was the primary driver of an 82% increase in capacity market revenues in the 2026/27 auction.</p>
+<p>Starting in summer 2026, PJM will have just enough power to keep the grid reliable. Data centers are connecting faster than new generation and reliable transmission can be built. The grid operator has initiated a Critical Issue Fast Path process to address reliability concerns, with implementation targeted for the 2028/29 capacity auction — two years away.</p>
+<p><strong>MISO</strong></p>
+<p>MISO serves Chicago, Minneapolis, and much of the Midwest. Chicago is a major operational hub for asset managers — Northern Trust, Nuveen — and for insurers and brokers — Allstate, Zurich North America, Aon, Gallagher. The data centers serving these firms' cloud operations sit in the same grid market facing load growth from AI infrastructure buildout.</p>
+<p><strong>ISO New England</strong></p>
+<p>ISO New England serves Boston and Hartford — the home markets of major asset managers including Fidelity, State Street, Wellington, and MFS, and major insurers including Travelers and Hartford Financial.</p>
+<p>ISO New England's grid depends on contracted power from Hydro-Québec. In January 2026, the New England Clean Energy Connect transmission line came online after nearly a decade of development, designed to deliver 1,200 megawatts of hydroelectric power from Quebec. Eight days later, Winter Storm Fern hit. Quebec suspended exports to meet its own surging domestic demand. ISO New England ran on emergency oil generation under a US Energy Secretary emergency order. The line designed to provide reliability failed at the moment reliability was needed most. The grid held. This time.</p>
+<hr>
+<h2>What To Do</h2>
+<p>The window is the contract and policy renewal cycle — what remains of 2026 and early 2027.</p>
+<p><strong>Audit your cloud contracts</strong></p>
+<p>Find the force majeure language. Understand what triggers service level agreement credits and what voids them. Asset managers should map this against their order management systems, trading platforms, and data vendor dependencies. Insurers should map it against their policy administration systems, claims processing platforms, and actuarial modeling infrastructure. Most firms have not read this section since they signed.</p>
+<p><strong>Review your business interruption insurance policy with fresh eyes</strong></p>
+<p>Ask your broker specifically: if our cloud provider experiences a multi-day outage due to grid constraints — no physical damage, just insufficient power — what is covered? Get the answer in writing.</p>
+<p><strong>Stress-test your business continuity and disaster recovery plan</strong></p>
+<p>Model a scenario where your primary and backup cloud regions both face power constraints simultaneously. For firms in the PJM or ISO New England footprint, this is not a remote scenario. Where does your recovery path actually lead when both regions are stressed?</p>
+<p><strong>Consider parametric coverage</strong></p>
+<p>Some insurers are developing products that trigger based on measurable grid events — frequency deviation, wholesale power price thresholds — rather than physical damage triggers. These may fill the gap that conventional business interruption insurance cannot reach.</p>
+<p><strong>Build the board case</strong></p>
+<p>The exposure sits at the intersection of cloud dependency, grid reliability, and insurance coverage gaps. The risk committee should understand it before it materializes in an outage. Waiting until after an incident closes the negotiating window permanently.</p>
+<hr>
+<h2>The Bottom Line</h2>
+<p>The cloud contract is the source document. The business continuity and disaster recovery plan inherits its limitations. The business interruption insurance policy may fail when the cloud exclusion triggers.</p>
+<p>The question is not whether grid constraints will affect enterprise operations in PJM, MISO, and ISO New England. The constraints are already emerging. The question is whether your organization discovers the cascade in a contract review this year or in a claims denial next year.</p>
+<p>The window to negotiate is what remains of 2026 and early 2027. After that, you are riding whatever coverage you have.</p>
+<hr>
+<p><em>Map your exposure before it materializes.</em></p>
+<p><em>[Start a Conversation]</em></p>
+</body>
+</html>

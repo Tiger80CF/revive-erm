@@ -319,6 +319,50 @@
         }
 
         /* Topics Section */
+        .rbr-feature {
+            padding: 6rem 2rem;
+            background: var(--color-ink);
+            color: var(--color-paper);
+        }
+
+        .rbr-feature-content {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .rbr-feature .section-eyebrow {
+            color: var(--color-accent);
+        }
+
+        .rbr-feature-title {
+            font-family: var(--font-display);
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 500;
+            line-height: 1.15;
+            letter-spacing: -0.02em;
+            margin: 1rem 0 1.5rem;
+            color: var(--color-paper);
+        }
+
+        .rbr-feature-text {
+            font-size: 1.15rem;
+            font-weight: 300;
+            line-height: 1.8;
+            color: rgba(250, 249, 247, 0.75);
+            margin-bottom: 2.5rem;
+            max-width: 600px;
+        }
+
+        .rbr-feature .hero-cta {
+            color: var(--color-paper);
+            border-color: var(--color-paper);
+        }
+
+        .rbr-feature .hero-cta:hover {
+            color: var(--color-accent);
+            border-color: var(--color-accent);
+        }
+
         .topics {
             background: #f5f3ef;
         }
@@ -693,6 +737,7 @@
         <a href="index.html" class="nav-brand"><img src="logo.png" alt="Revive ERM" class="nav-logo"></a>
         <ul class="nav-links" id="navLinks">
             <li><a href="#services">Services</a></li>
+            <li><a href="right-brained-risk.html">Right-Brained Risk</a></li>
             <li><a href="insights.html">Insights</a></li>
             <li><a href="about.html">About</a></li>
             <li><a href="#contact">Contact</a></li>
@@ -726,6 +771,22 @@
             <div class="provocation-content">
                 <p class="provocation-question">"Why do sophisticated senior risk professionals keep missing what's coming?"</p>
                 <p class="provocation-answer">They're trapped in left-brain frameworks — quantitative models, historical data, regulatory checklists — while the risks that matter most emerge in conditions of turbulence, uncertainty, novelty, and ambiguity. You can't model your way out of that. You have to see it.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="rbr-feature" id="rbr-feature">
+        <div class="container">
+            <div class="rbr-feature-content">
+                <p class="section-eyebrow">The Framework</p>
+                <h2 class="rbr-feature-title">Right-Brained Risk</h2>
+                <p class="rbr-feature-text">Most risk failures aren't failures of data or frameworks. They're failures of attention — the capacity to see what's emerging before it fits the model. Right-Brained Risk is the practice of building that capacity into ERM programs and the people who run them.</p>
+                <a href="right-brained-risk.html" class="hero-cta">
+                    Explore Right-Brained Risk
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                    </svg>
+                </a>
             </div>
         </div>
     </section>
@@ -779,8 +840,8 @@
                 </a>
                 <a href="grid-risk.html" class="topic-card">
                     <p class="topic-number">02</p>
-                    <h3 class="topic-title">AI Data Centers May Put Your Cloud Contracts at Risk</h3>
-                    <p class="topic-excerpt">The force majeure clause in your cloud contract may undercut your BCP/DR plan and your BI policy in the same event.</p>
+                    <h3 class="topic-title">Your Cloud Infrastructure Runs on a Grid That Wasn't Built for AI. Your Contracts Don't Cover What Happens Next.</h3>
+                    <p class="topic-excerpt">Trading systems, policy administration, and claims processing run on cloud infrastructure in grid markets facing structural stress this summer. The cloud contract, business continuity plan, and business interruption insurance policy weren't written to work together. When the grid fails, they work against each other.</p>
                     <span class="topic-link">
                         Read more
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
@@ -788,10 +849,10 @@
                         </svg>
                     </span>
                 </a>
-                <a href="right-brained-risk.html" class="topic-card">
+                <a href="agentic-ai-risk.html" class="topic-card">
                     <p class="topic-number">03</p>
-                    <h3 class="topic-title">Right-Brained Risk</h3>
-                    <p class="topic-excerpt">The role of disposition and temperament in managing risk. Why left-brain frameworks fail in conditions of turbulence, uncertainty, novelty and ambiguity.</p>
+                    <h3 class="topic-title">Agentic AI Is in Pilot Across Your Business. How Does the Risk Function Ride Alongside?</h3>
+                    <p class="topic-excerpt">Asset managers, banks, and health insurers are running agentic AI pilots in reconciliation, claims administration, and fraud detection. Gatekeeper and oracle postures don't fit. The sidecar posture does — if the risk function is willing to ride alongside the work.</p>
                     <span class="topic-link">
                         Read more
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">

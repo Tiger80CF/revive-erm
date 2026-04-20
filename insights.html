@@ -115,6 +115,27 @@
             padding: 0 2rem 6rem;
         }
 
+        .cluster-header {
+            padding: 3rem 0 0;
+            border-top: 2px solid var(--color-ink);
+            margin-top: 1rem;
+        }
+
+        .cluster-header:first-child {
+            border-top: none;
+            margin-top: 0;
+            padding-top: 0;
+        }
+
+        .cluster-label {
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            color: var(--color-ink);
+            margin-bottom: 0;
+        }
+
         .insight-item {
             display: block;
             padding: 3rem 0;
@@ -211,6 +232,7 @@
         <a href="index.html" class="nav-brand"><img src="logo.png" alt="Revive ERM" class="nav-logo"></a>
         <ul class="nav-links">
             <li><a href="index.html#services">Services</a></li>
+            <li><a href="right-brained-risk.html">Right-Brained Risk</a></li>
             <li><a href="insights.html" class="active">Insights</a></li>
             <li><a href="about.html">About</a></li>
             <li><a href="index.html#contact">Contact</a></li>
@@ -223,29 +245,39 @@
     </header>
 
     <main class="insights-list">
-        <a href="agentic-ai-risk.html" class="insight-item">
-            <p class="insight-category">Emerging Risk</p>
-            <h2 class="insight-title">Agentic AI Is in Pilot Across Your Business. How Does the Risk Function Ride Alongside?</h2>
-            <p class="insight-excerpt">Asset managers, banks, and health insurers are running agentic AI pilots in reconciliation, claims administration, and fraud detection. Gatekeeper and oracle postures don't fit. The sidecar posture does — if the risk function is willing to ride alongside the work.</p>
+
+        <div class="cluster-header">
+            <p class="cluster-label">The Framework</p>
+        </div>
+
+        <a href="right-brained-risk.html" class="insight-item">
+            <p class="insight-category">Right-Brained Risk</p>
+            <h2 class="insight-title">Right-Brained Risk</h2>
+            <p class="insight-excerpt">Most risk failures aren't failures of data or frameworks. They're failures of attention — the capacity to see what's emerging before it fits the model. The role of disposition and temperament in managing risk, and why left-brain frameworks fail in conditions of turbulence, uncertainty, novelty, and ambiguity.</p>
         </a>
 
+        <div class="cluster-header">
+            <p class="cluster-label">Emerging Risk Applications</p>
+        </div>
+
         <a href="offshore-it-risk.html" class="insight-item">
-            <p class="insight-category">Emerging Risk</p>
+            <p class="insight-category">Vendor Risk</p>
             <h2 class="insight-title">Your Offshore IT Provider's Business Model Is Breaking. Your Vendor Risk Program Isn't Watching.</h2>
             <p class="insight-excerpt">India's tech sector shed over 100,000 jobs in 2025. The cuts are concentrated in mid- and senior-level roles — the people who understood your environment. Nobody's tracking which of that knowledge applies to your systems.</p>
         </a>
 
         <a href="grid-risk.html" class="insight-item">
-            <p class="insight-category">Emerging Risk</p>
-            <h2 class="insight-title">AI Data Centers May Put Your Cloud Contracts and Failover Protections at Risk</h2>
-            <p class="insight-excerpt">The force majeure clause in your cloud contract may undercut your BCP/DR plan and your business interruption insurance protections in the same event.</p>
+            <p class="insight-category">Infrastructure Risk</p>
+            <h2 class="insight-title">Your Cloud Infrastructure Runs on a Grid That Wasn't Built for AI. Your Contracts Don't Cover What Happens Next.</h2>
+            <p class="insight-excerpt">Trading systems, policy administration, and claims processing run on cloud infrastructure in grid markets facing structural stress this summer. The cloud contract, business continuity and disaster recovery plan, and business interruption insurance policy weren't written to work together. When the grid fails, they work against each other.</p>
         </a>
 
-        <a href="right-brained-risk.html" class="insight-item">
-            <p class="insight-category">Risk Leadership</p>
-            <h2 class="insight-title">Right-Brained Risk</h2>
-            <p class="insight-excerpt">The role of disposition and temperament in managing risk. Why left-brain frameworks fail in conditions of turbulence, uncertainty, novelty and ambiguity.</p>
+        <a href="agentic-ai-risk.html" class="insight-item">
+            <p class="insight-category">AI Risk</p>
+            <h2 class="insight-title">Agentic AI Is in Pilot Across Your Business. How Does the Risk Function Ride Alongside?</h2>
+            <p class="insight-excerpt">Asset managers, banks, and health insurers are running agentic AI pilots in reconciliation, claims administration, and fraud detection. Gatekeeper and oracle postures don't fit. The sidecar posture does — if the risk function is willing to ride alongside the work.</p>
         </a>
+
     </main>
 
     <footer>
