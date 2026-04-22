@@ -1,287 +1,428 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Your Cloud Infrastructure Runs on a Grid That Wasn't Built for AI | Revive ERM</title>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
-  <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Cloud Infrastructure Runs on a Grid That Wasn't Built for AI | Revive ERM | Susan Ramonat</title>
+    <meta name="description" content="AI data center buildout is pushing PJM, MISO, and ISO New England toward their reliability ceilings. Your cloud contract, BCP/DR plan, and business interruption policy weren't written to work together. When the grid fails, they work against each other.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Source+Sans+3:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --color-ink: #1a1a1a;
+            --color-paper: #faf9f7;
+            --color-accent: #0656d6;
+            --color-muted: #6b6b6b;
+            --color-rule: #d4d0c8;
+            --font-display: 'Cormorant Garamond', Georgia, serif;
+            --font-body: 'Source Sans 3', system-ui, sans-serif;
+        }
 
-    :root {
-      --blue: #0656d6;
-      --bg: #faf9f7;
-      --text: #1a1a1a;
-      --muted: #555;
-      --rule: #d8d4ce;
-      --max: 720px;
-    }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-    body {
-      background: var(--bg);
-      color: var(--text);
-      font-family: 'Source Sans 3', sans-serif;
-      font-size: 18px;
-      line-height: 1.7;
-    }
+        body {
+            font-family: var(--font-body);
+            font-size: 17px;
+            line-height: 1.7;
+            color: var(--color-ink);
+            background: var(--color-paper);
+            -webkit-font-smoothing: antialiased;
+        }
 
-    /* NAV */
-    nav {
-      border-bottom: 1px solid var(--rule);
-      padding: 0 2rem;
-      display: flex;
-      align-items: center;
-      height: 72px;
-    }
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: var(--color-paper);
+            border-bottom: 1px solid var(--color-rule);
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
 
-    nav a {
-      text-decoration: none;
-      font-family: 'Source Sans 3', sans-serif;
-      font-weight: 600;
-      font-size: 0.95rem;
-      color: var(--blue);
-      letter-spacing: 0.04em;
-      text-transform: uppercase;
-    }
+        .nav-brand {
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--color-ink);
+            text-decoration: none;
+            letter-spacing: -0.02em;
+        }
 
-    nav a:hover { opacity: 0.75; }
+        .nav-logo {
+            height: 60px;
+            width: auto;
+        }
 
-    /* ARTICLE LAYOUT */
-    article {
-      max-width: var(--max);
-      margin: 0 auto;
-      padding: 4rem 2rem 6rem;
-    }
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+            list-style: none;
+        }
 
-    /* HEADER */
-    .article-header {
-      margin-bottom: 3rem;
-      padding-bottom: 2rem;
-      border-bottom: 2px solid var(--blue);
-    }
+        .nav-links a {
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: var(--color-muted);
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            transition: color 0.2s ease;
+        }
 
-    .article-label {
-      font-family: 'Source Sans 3', sans-serif;
-      font-size: 0.8rem;
-      font-weight: 600;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--blue);
-      margin-bottom: 1rem;
-    }
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: var(--color-accent);
+        }
 
-    h1 {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 2.6rem;
-      font-weight: 600;
-      line-height: 1.2;
-      color: var(--text);
-      margin-bottom: 1.25rem;
-    }
+        .article-header {
+            padding: 8rem 2rem 4rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
 
-    .article-byline {
-      font-size: 0.9rem;
-      color: var(--muted);
-      font-family: 'Source Sans 3', sans-serif;
-    }
+        .article-meta {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
 
-    /* TLDR */
-    .tldr {
-      background: #eef3fc;
-      border-left: 3px solid var(--blue);
-      padding: 1.5rem 1.75rem;
-      margin: 2.5rem 0;
-      border-radius: 0 4px 4px 0;
-    }
+        .article-category {
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            color: var(--color-accent);
+        }
 
-    .tldr-label {
-      font-family: 'Source Sans 3', sans-serif;
-      font-size: 0.75rem;
-      font-weight: 600;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--blue);
-      margin-bottom: 0.75rem;
-    }
+        .article-meta-divider {
+            color: var(--color-rule);
+            font-size: 0.8rem;
+        }
 
-    .tldr p {
-      font-size: 0.95rem;
-      line-height: 1.65;
-      color: var(--text);
-    }
+        .article-byline {
+            font-size: 0.8rem;
+            font-weight: 500;
+            color: var(--color-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+        }
 
-    /* BODY TEXT */
-    p {
-      margin-bottom: 1.4rem;
-    }
+        .article-title {
+            font-family: var(--font-display);
+            font-size: clamp(2.5rem, 5vw, 3.5rem);
+            font-weight: 500;
+            line-height: 1.15;
+            letter-spacing: -0.02em;
+            margin-bottom: 1.5rem;
+        }
 
-    /* SECTION HEADINGS */
-    h2 {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.65rem;
-      font-weight: 600;
-      color: var(--text);
-      margin: 3rem 0 1rem;
-      padding-top: 1rem;
-      border-top: 1px solid var(--rule);
-    }
+        .article-subtitle {
+            font-size: 1.35rem;
+            font-weight: 300;
+            color: var(--color-muted);
+            line-height: 1.5;
+        }
 
-    h3 {
-      font-family: 'Source Sans 3', sans-serif;
-      font-size: 1rem;
-      font-weight: 600;
-      letter-spacing: 0.04em;
-      text-transform: uppercase;
-      color: var(--blue);
-      margin: 2.25rem 0 0.75rem;
-    }
+        .article-content {
+            max-width: 700px;
+            margin: 0 auto;
+            padding: 0 2rem 6rem;
+        }
 
-    /* PULL QUOTE */
-    blockquote {
-      margin: 2.5rem 0;
-      padding: 1.25rem 1.75rem;
-      border-left: 3px solid var(--blue);
-    }
+        .article-content h2 {
+            font-family: var(--font-display);
+            font-size: 1.75rem;
+            font-weight: 500;
+            margin: 3rem 0 1.5rem;
+            line-height: 1.3;
+        }
 
-    blockquote p {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.35rem;
-      font-style: italic;
-      line-height: 1.5;
-      color: var(--text);
-      margin-bottom: 0;
-    }
+        .article-content h3 {
+            font-family: var(--font-display);
+            font-size: 1.35rem;
+            font-weight: 500;
+            margin: 2rem 0 1rem;
+            line-height: 1.3;
+        }
 
-    /* FOOTER */
-    footer {
-      border-top: 1px solid var(--rule);
-      padding: 2rem;
-      text-align: center;
-      font-size: 0.85rem;
-      color: var(--muted);
-      font-family: 'Source Sans 3', sans-serif;
-    }
+        .article-content p {
+            margin-bottom: 1.5rem;
+            font-weight: 300;
+        }
 
-    footer a { color: var(--blue); text-decoration: none; }
-    footer a:hover { text-decoration: underline; }
+        .article-content p strong {
+            font-weight: 500;
+            color: var(--color-ink);
+        }
 
-    @media (max-width: 600px) {
-      h1 { font-size: 1.9rem; }
-      h2 { font-size: 1.35rem; }
-      article { padding: 2.5rem 1.25rem 4rem; }
-    }
-  </style>
+        .tldr {
+            background: #f4f3f1;
+            border-left: 4px solid var(--color-accent);
+            padding: 1.5rem 2rem;
+            margin: 0 0 2.5rem;
+        }
+
+        .tldr-label {
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            color: var(--color-accent);
+            margin-bottom: 0.75rem;
+        }
+
+        .tldr p {
+            font-size: 0.95rem;
+            font-weight: 400;
+            margin-bottom: 0;
+        }
+
+        .callout {
+            background: var(--color-accent);
+            color: var(--color-paper);
+            padding: 1.5rem 2rem;
+            margin: 2.5rem -2rem;
+            font-weight: 500;
+            font-size: 1.1rem;
+            line-height: 1.5;
+        }
+
+        .callout-question {
+            background: #f4f3f1;
+            color: var(--color-ink);
+            padding: 2rem;
+            margin: 2.5rem 0;
+            font-family: var(--font-display);
+            font-size: 1.25rem;
+            font-style: italic;
+            font-weight: 400;
+            line-height: 1.5;
+            border-left: 4px solid var(--color-accent);
+        }
+
+        .article-cta {
+            background: #f4f3f1;
+            padding: 3rem;
+            margin: 3rem -2rem 0;
+            text-align: center;
+        }
+
+        .article-cta h3 {
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            font-weight: 500;
+            margin-bottom: 1rem;
+        }
+
+        .article-cta p {
+            font-weight: 300;
+            color: var(--color-muted);
+            margin-bottom: 2rem;
+        }
+
+        .cta-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            font-size: 0.9rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--color-paper);
+            background: var(--color-ink);
+            text-decoration: none;
+            padding: 1rem 2rem;
+            transition: all 0.3s ease;
+        }
+
+        .cta-button:hover {
+            background: var(--color-accent);
+        }
+
+        footer {
+            background: var(--color-ink);
+            color: var(--color-paper);
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .footer-text {
+            font-size: 0.85rem;
+            opacity: 0.5;
+        }
+
+        .footer-text a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        @media (max-width: 768px) {
+            nav {
+                padding: 1rem;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .article-header {
+                padding: 6rem 1.5rem 3rem;
+            }
+
+            .article-content {
+                padding: 0 1.5rem 4rem;
+            }
+
+            .callout {
+                margin: 2rem -1.5rem;
+                padding: 1.5rem;
+            }
+
+            .article-cta {
+                margin: 2rem -1.5rem 0;
+                padding: 2rem 1.5rem;
+            }
+        }
+    </style>
 </head>
 <body>
+    <nav>
+        <a href="index.html" class="nav-brand"><img src="logo.png" alt="Revive ERM" class="nav-logo"></a>
+        <ul class="nav-links">
+            <li><a href="index.html#services">Services</a></li>
+            <li><a href="insights.html">Insights</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+    </nav>
 
-  <nav>
-    <a href="index.html">Revive ERM</a>
-  </nav>
+    <article>
+        <header class="article-header">
+            <div class="article-meta">
+                <span class="article-category">Infrastructure Risk</span>
+                <span class="article-meta-divider">|</span>
+                <span class="article-byline">Susan Ramonat &nbsp;&middot;&nbsp; Revive ERM &nbsp;&middot;&nbsp; April 2026</span>
+            </div>
+            <h1 class="article-title">Your Cloud Infrastructure Runs on a Grid That Wasn&#8217;t Built for AI. Your Contracts Don&#8217;t Cover What Happens Next.</h1>
+            <p class="article-subtitle">The force majeure clause in your cloud contract, the failover assumptions in your business continuity and disaster recovery plan, and the coverage triggers in your business interruption insurance policy were not written to work together. When the grid fails, they work against each other.</p>
+        </header>
 
-  <article>
+        <div class="article-content">
 
-    <header class="article-header">
-      <p class="article-label">Grid Risk &amp; Insurance</p>
-      <h1>Your Cloud Infrastructure Runs on a Grid That Wasn't Built for AI. Your Contracts Don't Cover What Happens Next.</h1>
-      <p class="article-byline">Susan Ramonat &nbsp;·&nbsp; Revive ERM &nbsp;·&nbsp; April 2026</p>
-    </header>
+            <div class="tldr">
+                <p class="tldr-label">TLDR</p>
+                <p>AI data center buildout pushes PJM, MISO, and ISO New England toward their reliability ceilings before extreme weather adds load on top. Investment managers in Boston, New York, and Philadelphia, and health and life insurers in Hartford, Chicago, and Milwaukee depend on cloud infrastructure concentrated in Northern Virginia, the Chicago corridor, and New England &#8212; all three grid markets. The cloud contracts, business continuity and disaster recovery plans, and business interruption insurance policies meant to protect those operations do not. The window to negotiate better terms is short.</p>
+            </div>
 
-    <div class="tldr">
-      <p class="tldr-label">TLDR</p>
-      <p>AI data center buildout pushes PJM, MISO, and ISO New England toward their reliability ceilings before extreme weather adds load on top. Investment managers in Boston, New York, and Philadelphia, and health and life insurers in Hartford, Chicago, and Milwaukee depend on cloud infrastructure concentrated in Northern Virginia, the Chicago corridor, and New England — all three grid markets. The cloud contracts, business continuity and disaster recovery plans, and business interruption insurance policies meant to protect those operations do not. The window to negotiate better terms is short.</p>
-    </div>
+            <h2>The Operational Stake</h2>
 
-    <h2>The Operational Stake</h2>
+            <p>Trading systems, policy administration platforms, and claims processing engines sit at the operational core of investment managers and health and life insurers. The firms running these systems &#8212; in Boston, New York, Philadelphia, Hartford, Chicago, and Milwaukee &#8212; run them on cloud infrastructure in data centers concentrated in Northern Virginia, the Chicago corridor, and New England. Those data centers draw from three grid markets: PJM, MISO, and ISO New England.</p>
 
-    <p>Trading systems, policy administration platforms, and claims processing engines sit at the operational core of investment managers and health and life insurers. The firms running these systems — in Boston, New York, Philadelphia, Hartford, Chicago, and Milwaukee — run them on cloud infrastructure in data centers concentrated in Northern Virginia, the Chicago corridor, and New England. Those data centers draw from three grid markets: PJM, MISO, and ISO New England.</p>
+            <p>Each market faces two compounding pressures the cloud contracts, business continuity plans, and insurance policies governing that dependency were not designed to address.</p>
 
-    <p>Each market faces two compounding pressures the cloud contracts, business continuity plans, and insurance policies governing that dependency were not designed to address.</p>
+            <p>The first pressure is structural. AI data center buildout consumes grid capacity faster than transmission and generation can be built. Capacity auctions in PJM already show the gap: the 2026/27 auction produced an 82% increase in capacity market revenues, driven by data center load growth. The procurement is a signal, not a projection.</p>
 
-    <p>The first pressure is structural. AI data center buildout consumes grid capacity faster than transmission and generation can be built. Capacity auctions in PJM already show the gap: the 2026/27 auction produced an 82% increase in capacity market revenues, driven by data center load growth. The procurement is a signal, not a projection.</p>
+            <p>The second pressure compounds the first. Heat domes, winter storms, and wildfires stress the same grid markets that AI data centers already push toward their reliability ceilings. Failover does not escape the problem. The backup region may draw from the same stressed market as the primary.</p>
 
-    <p>The second pressure compounds the first. Heat domes, winter storms, and wildfires stress the same grid markets that AI data centers already push toward their reliability ceilings. Failover does not escape the problem. The backup region may draw from the same stressed market as the primary.</p>
+            <p>When both pressures arrive together, the cloud infrastructure that investment managers and health and life insurers depend on faces a failure scenario their contracts, plans, and policies were not built to handle.</p>
 
-    <p>When both pressures arrive together, the cloud infrastructure that investment managers and health and life insurers depend on faces a failure scenario their contracts, plans, and policies were not built to handle.</p>
+            <h2>The Cascade</h2>
 
-    <h2>The Cascade</h2>
+            <p>Three instruments that should protect operations in sequence instead produce a cascade of compounding exposure. Each one fails because of what the prior instrument assumed.</p>
 
-    <p>Three instruments that should protect operations in sequence instead produce a cascade of compounding exposure. Each one fails because of what the prior instrument assumed.</p>
+            <h3>Cloud Contract</h3>
 
-    <h3>Cloud Contract</h3>
+            <p>AWS, Azure, and Google Cloud all explicitly exclude liability for grid-related outages. Force majeure clauses cover electrical and power outages, utility and telecommunications failures, acts of God, and natural disasters. When the grid fails, the cloud provider invokes the exclusion. Credits are typically the sole remedy, and only where the service level agreement applies. Damages are excluded.</p>
 
-    <p>AWS, Azure, and Google Cloud all explicitly exclude liability for grid-related outages. Force majeure clauses cover electrical and power outages, utility and telecommunications failures, acts of God, and natural disasters. When the grid fails, the cloud provider invokes the exclusion. Credits are typically the sole remedy, and only where the service level agreement applies. Damages are excluded.</p>
+            <p>On February 7, 2026, an Azure datacenter lost utility power after an onsite transformer failure cascaded into a UPS and generator failure. Customer workloads were disrupted for hours. Microsoft&#8217;s own status report documented the sequence in detail. In October 2025, an AWS US-East-1 outage disrupted over 3,500 companies across 60 countries. In both cases the force majeure clause was written for exactly these scenarios, and credits, not damages, were the contractual remedy.</p>
 
-    <p>On February 7, 2026, an Azure datacenter lost utility power after an onsite transformer failure cascaded into a UPS and generator failure. Customer workloads were disrupted for hours. Microsoft's own status report documented the sequence in detail. In October 2025, an AWS US-East-1 outage disrupted over 3,500 companies across 60 countries. In both cases the force majeure clause was written for exactly these scenarios, and credits, not damages, were the contractual remedy.</p>
+            <div class="callout">The service level agreement is not the governing document. The force majeure clause is.</div>
 
-    <h3>Business Continuity and Disaster Recovery Plan</h3>
+            <h3>Business Continuity and Disaster Recovery Plan</h3>
 
-    <p>Most business continuity and disaster recovery plans name a primary cloud region, backup cloud region, recovery time objective, and recovery point objective. Those four elements answer the question the plan was written to answer: where does the workload go when the primary region fails?</p>
+            <p>Most business continuity and disaster recovery plans name a primary cloud region, backup cloud region, recovery time objective, and recovery point objective. Those four elements answer the question the plan was written to answer: where does the workload go when the primary region fails?</p>
 
-    <p>They do not answer the question the plan was not written to answer: whether the backup region draws from the same grid market as the primary.</p>
+            <p>They do not answer the question the plan was not written to answer: whether the backup region draws from the same grid market as the primary.</p>
 
-    <p>That omission follows directly from how backup regions get designated. Cloud providers publish recommended multi-region architectures built around the same force majeure logic that excludes grid failures from their liability. AWS routes primary workloads through us-east-1 in Northern Virginia and backup workloads through us-east-2 in Ohio. Both sit in PJM. The plan looks geographically diversified. The grid exposure does not change.</p>
+            <p>That omission follows directly from how backup regions get designated. Cloud providers publish recommended multi-region architectures built around the same force majeure logic that excludes grid failures from their liability. AWS routes primary workloads through us-east-1 in Northern Virginia and backup workloads through us-east-2 in Ohio. Both sit in PJM. The plan looks geographically diversified. The grid exposure does not change.</p>
 
-    <p>The same logic applies across grid market boundaries. A firm routing primary workloads through MISO and failover through PJM holds two architecturally distinct regions. Under correlated grid stress — a heat dome spanning the Midwest or a winter storm crossing multiple ISO boundaries — both markets face simultaneous demand spikes. Geographic separation across grid markets does not produce operational independence when the weather system driving the failure crosses market boundaries.</p>
+            <p>The same logic applies across grid market boundaries. A firm routing primary workloads through MISO and failover through PJM holds two architecturally distinct regions. Under correlated grid stress &#8212; a heat dome spanning the Midwest or a winter storm crossing multiple ISO boundaries &#8212; both markets face simultaneous demand spikes. Geographic separation across grid markets does not produce operational independence when the weather system driving the failure crosses market boundaries.</p>
 
-    <p>When a primary region fails under grid stress, the BCP/DR plan executes as designed. Workloads route into the same constrained grid market from which the primary just failed. The plan fails not because it was ignored, but because it was followed.</p>
+            <p>When a primary region fails under grid stress, the BCP/DR plan executes as designed. Workloads route into the same constrained grid market from which the primary just failed. The plan fails not because it was ignored, but because it was followed.</p>
 
-    <p>Failover buys time while the clock runs. As downtime extends, operational backlog accumulates, revenue stops, and costs do not. RPO drift compounds all three: data accumulated during the outage window cannot be trusted at restoration. At some firm-specific point those pressures intersect. The organization cannot restore and resume. It has to determine which data state to trust before either environment returns to production.</p>
+            <div class="callout">The plan fails not because it was ignored, but because it was followed.</div>
 
-    <p>Most BCP/DR plans close at restoration. In a sustained outage, restoration opens the second problem. Replication reversal from failover back to primary requires a pre-configured, tested reconciliation process. Most organizations have neither.</p>
+            <p>Failover buys time while the clock runs. As downtime extends, operational backlog accumulates, revenue stops, and costs do not. RPO drift compounds all three: data accumulated during the outage window cannot be trusted at restoration. At some firm-specific point those pressures intersect. The organization cannot restore and resume. It has to determine which data state to trust before either environment returns to production.</p>
 
-    <h3>Business Interruption Insurance Policy</h3>
+            <p>Most BCP/DR plans close at restoration. In a sustained outage, restoration opens the second problem. Replication reversal from failover back to primary requires a pre-configured, tested reconciliation process. Most organizations have neither.</p>
 
-    <p>With the cloud contract exclusion triggered and the BCP/DR plan routed into the same failure, the business interruption policy carries the exposure alone — and the coverage trigger requires physical damage that a grid capacity shortfall never produces.</p>
+            <h3>Business Interruption Insurance Policy</h3>
 
-    <p>Business interruption insurance requires physical damage to the insured's property. Cloud outages do not satisfy that requirement. Contingent business interruption coverage requires physical damage to a supplier's property. A grid capacity shortfall produces no damage; a grid operator issues a dispatch decision managing competing load. The claim fails on the same grounds as the cloud exclusion, at the same moment, against the same event.</p>
+            <p>With the cloud contract exclusion triggered and the BCP/DR plan routed into the same failure, the business interruption policy carries the exposure alone &#8212; and the coverage trigger requires physical damage that a grid capacity shortfall never produces.</p>
 
-    <blockquote>
-      <p>"These contracts, plans, and policies are rarely read against each other. That is where the exposure lives."</p>
-    </blockquote>
+            <p>Business interruption insurance requires physical damage to the insured&#8217;s property. Cloud outages do not satisfy that requirement. Contingent business interruption coverage requires physical damage to a supplier&#8217;s property. A grid capacity shortfall produces no damage; a grid operator issues a dispatch decision managing competing load. The claim fails on the same grounds as the cloud exclusion, at the same moment, against the same event.</p>
 
-    <h2>The Geography</h2>
+            <div class="callout-question">&#8220;These contracts, plans, and policies are rarely read against each other. That is where the exposure lives.&#8221;</div>
 
-    <h3>PJM</h3>
+            <h2>The Geography</h2>
 
-    <p>PJM holds more data centers than any other grid market in the country. The concentration runs through Northern Virginia, where cloud infrastructure serves financial services, healthcare, federal agencies, and a significant share of investment management operational systems. PJM's independent market monitor found that data center load growth drove an 82% increase in capacity market revenues in the 2026/27 auction.</p>
+            <h3>PJM</h3>
 
-    <p>Beginning summer 2026, PJM's generation and demand will leave the system at its reliability ceiling. Data centers connect faster than new generation and transmission can be built. PJM has initiated a Critical Issue Fast Path process to address the gap, with implementation targeted for the 2028/29 capacity auction.</p>
+            <p>PJM holds more data centers than any other grid market in the country. The concentration runs through Northern Virginia, where cloud infrastructure serves financial services, healthcare, federal agencies, and a significant share of investment management operational systems. PJM&#8217;s independent market monitor found that data center load growth drove an 82% increase in capacity market revenues in the 2026/27 auction.</p>
 
-    <h3>MISO</h3>
+            <p>Beginning summer 2026, PJM&#8217;s generation and demand will leave the system at its reliability ceiling. Data centers connect faster than new generation and transmission can be built. PJM has initiated a Critical Issue Fast Path process to address the gap, with implementation targeted for the 2028/29 capacity auction.</p>
 
-    <p>MISO serves Chicago, Minneapolis, and much of the Midwest. Northern Trust, Nuveen, Allstate, Zurich North America, Aon, and Gallagher all run operations from Chicago. The data centers carrying their cloud workloads sit in the same grid market absorbing AI infrastructure load.</p>
+            <h3>MISO</h3>
 
-    <h3>ISO New England</h3>
+            <p>MISO serves Chicago, Minneapolis, and much of the Midwest. Northern Trust, Nuveen, Allstate, Zurich North America, Aon, and Gallagher all run operations from Chicago. The data centers carrying their cloud workloads sit in the same grid market absorbing AI infrastructure load.</p>
 
-    <p>ISO New England serves Boston and Hartford — home to Fidelity, State Street, Wellington, MFS, Travelers, and Hartford Financial. The grid depends on contracted power from Hydro-Québec. In January 2026, the New England Clean Energy Connect transmission line came online after nearly a decade of development, built to deliver 1,200 megawatts of hydroelectric power from Quebec. Eight days later, Winter Storm Fern hit. Quebec suspended exports to meet domestic demand. ISO New England ran on emergency oil generation under a U.S. Energy Secretary emergency order. The line built to provide reliability failed at the moment reliability was needed most. The grid held — that time.</p>
+            <h3>ISO New England</h3>
 
-    <h2>What To Do</h2>
+            <p>ISO New England serves Boston and Hartford &#8212; home to Fidelity, State Street, Wellington, MFS, Travelers, and Hartford Financial. The grid depends on contracted power from Hydro-Qu&#233;bec. In January 2026, the New England Clean Energy Connect transmission line came online after nearly a decade of development, built to deliver 1,200 megawatts of hydroelectric power from Quebec. Eight days later, Winter Storm Fern hit. Quebec suspended exports to meet domestic demand. ISO New England ran on emergency oil generation under a U.S. Energy Secretary emergency order. The line built to provide reliability failed at the moment reliability was needed most. The grid held &#8212; that time.</p>
 
-    <p>The window is the contract and policy renewal cycle: what remains of 2026 and early 2027.</p>
+            <h2>What To Do</h2>
 
-    <p>Pull the force majeure language from each cloud contract — not the service level agreement headline — and map it against your order management systems, trading platforms, policy administration systems, and claims processing platforms. Most firms have not read this section since they signed.</p>
+            <p>The window is the contract and policy renewal cycle: what remains of 2026 and early 2027.</p>
 
-    <p>Ask your broker directly: if your cloud provider experiences a multi-day outage from grid constraints — no physical damage, only insufficient power — what does the policy cover? Get the answer in writing. Then map the coverage trigger against the BCP/DR plan's documented RTO by tier. Where the waiting period exceeds the RTO, the policy functions as a silent deductible.</p>
+            <p>Pull the force majeure language from each cloud contract &#8212; not the service level agreement headline &#8212; and map it against your order management systems, trading platforms, policy administration systems, and claims processing platforms. Most firms have not read this section since they signed.</p>
 
-    <p>Stress-test the BCP/DR plan against a scenario where primary and backup regions face power constraints simultaneously. Document the actual RTO, not the design assumption. Then test the failback sequence from a state of accumulated diverged data. Where the reconciliation process has no named owner and no tested procedure, the plan ends at failover and leaves the second problem unaddressed.</p>
+            <p>Ask your broker directly: if your cloud provider experiences a multi-day outage from grid constraints &#8212; no physical damage, only insufficient power &#8212; what does the policy cover? Get the answer in writing. Then map the coverage trigger against the BCP/DR plan&#8217;s documented RTO by tier. Where the waiting period exceeds the RTO, the policy functions as a silent deductible.</p>
 
-    <p>Some insurers now offer parametric coverage that triggers on measurable grid events — frequency deviation, wholesale power price thresholds — rather than physical damage. Where conventional business interruption coverage cannot reach the gap, parametric structures may.</p>
+            <p>Stress-test the BCP/DR plan against a scenario where primary and backup regions face power constraints simultaneously. Document the actual RTO, not the design assumption. Then test the failback sequence from a state of accumulated diverged data. Where the reconciliation process has no named owner and no tested procedure, the plan ends at failover and leaves the second problem unaddressed.</p>
 
-    <p>Bring the exposure to the risk committee before it materializes in an outage. The intersection of cloud dependency, grid reliability, and insurance coverage gaps belongs on the board agenda while the negotiating window remains open.</p>
+            <p>Some insurers now offer parametric coverage that triggers on measurable grid events &#8212; frequency deviation, wholesale power price thresholds &#8212; rather than physical damage. Where conventional business interruption coverage cannot reach the gap, parametric structures may.</p>
 
-    <h2>The Bottom Line</h2>
+            <p>Bring the exposure to the risk committee before it materializes in an outage. The intersection of cloud dependency, grid reliability, and insurance coverage gaps belongs on the board agenda while the negotiating window remains open.</p>
 
-    <p>The cloud contract defines what the provider owes when the grid fails: credits against fees, not compensation for losses. The BCP/DR plan inherits that limitation without knowing it, routing workloads into the same failure the contract excluded. The business interruption policy arrives last, with a coverage trigger the event was never going to satisfy.</p>
+            <h2>The Bottom Line</h2>
 
-    <p>Grid constraints in PJM, MISO, and ISO New England are not projections. Capacity auction results, reliability proceedings, and documented outages establish the exposure now. The question is whether your organization closes the gap in a contract review this year or discovers it in a claims denial next year.</p>
+            <p>The cloud contract defines what the provider owes when the grid fails: credits against fees, not compensation for losses. The BCP/DR plan inherits that limitation without knowing it, routing workloads into the same failure the contract excluded. The business interruption policy arrives last, with a coverage trigger the event was never going to satisfy.</p>
 
-    <p>The window to negotiate is what remains of 2026 and early 2027. After that, you carry whatever coverage you have.</p>
+            <p>Grid constraints in PJM, MISO, and ISO New England are not projections. Capacity auction results, reliability proceedings, and documented outages establish the exposure now. The question is whether your organization closes the gap in a contract review this year or discovers it in a claims denial next year.</p>
 
-  </article>
+            <p>The window to negotiate is what remains of 2026 and early 2027. After that, you carry whatever coverage you have.</p>
 
-  <footer>
-    <p>&copy; 2026 Revive ERM &nbsp;·&nbsp; <a href="index.html">Home</a></p>
-  </footer>
+            <div class="article-cta">
+                <h3>Close the gap before the window closes.</h3>
+                <p>Cloud contract review, BCP/DR stress testing, and insurance restructuring &#8212; before the 2026/27 grid stress window opens.</p>
+                <a href="index.html#contact" class="cta-button">Start a Conversation</a>
+            </div>
 
+        </div>
+    </article>
+
+    <footer>
+        <p class="footer-text">Revive ERM is a wholly owned subsidiary of <a href="#">Spiritus Partners, Inc.</a> &copy; 2026. All rights reserved.</p>
+    </footer>
 </body>
 </html>
