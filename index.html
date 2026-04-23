@@ -3,111 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Revive ERM | Susan Ramonat | Interim CRO & Risk Advisory</title>
+    <title>Revive ERM | Susan Ramonat | Interim CRO &amp; Risk Advisory</title>
     <meta name="description" content="Interim Chief Risk Officer services. Redesign and revive ERM programs that deliver value to boards and CEOs. Susan Ramonat - Princeton, SEI Investments, Vanguard.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Source+Sans+3:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
     <style>
-        :root {
-            --color-ink: #1a1a1a;
-            --color-paper: #faf9f7;
-            --color-accent: #0656d6;
-            --color-muted: #6b6b6b;
-            --color-rule: #d4d0c8;
-            --font-display: 'Cormorant Garamond', Georgia, serif;
-            --font-body: 'Source Sans 3', system-ui, sans-serif;
-        }
+        /* index.html — page-specific styles only */
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            font-family: var(--font-body);
-            font-size: 17px;
-            line-height: 1.7;
-            color: var(--color-ink);
-            background: var(--color-paper);
-            -webkit-font-smoothing: antialiased;
-        }
-
-        /* Navigation */
-        nav {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            z-index: 1000;
-            background: var(--color-paper);
-            border-bottom: 1px solid var(--color-rule);
-            padding: 1rem 2rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            transition: box-shadow 0.3s ease;
-        }
-
-        nav.scrolled {
-            box-shadow: 0 2px 20px rgba(0,0,0,0.06);
-        }
-
-        .nav-brand {
-            font-family: var(--font-display);
-            font-size: 1.5rem;
-            font-weight: 600;
-            color: var(--color-ink);
-            text-decoration: none;
-            letter-spacing: -0.02em;
-        }
-
-        .nav-logo {
-            height: 60px;
-            width: auto;
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 2.5rem;
-            list-style: none;
-        }
-
-        .nav-links a {
-            font-size: 0.9rem;
-            font-weight: 500;
-            color: var(--color-muted);
-            text-decoration: none;
-            text-transform: uppercase;
-            letter-spacing: 0.08em;
-            transition: color 0.2s ease;
-        }
-
-        .nav-links a:hover {
-            color: var(--color-accent);
-        }
-
-        .nav-toggle {
-            display: none;
-            flex-direction: column;
-            gap: 5px;
-            cursor: pointer;
-            padding: 5px;
-        }
-
-        .nav-toggle span {
-            width: 24px;
-            height: 2px;
-            background: var(--color-ink);
-            transition: all 0.3s ease;
-        }
-
-        /* Hero Section */
         .hero {
             min-height: 100vh;
             display: grid;
@@ -205,39 +109,6 @@
             background: linear-gradient(to top, rgba(250,249,247,0.4), transparent);
         }
 
-        /* Section Styles */
-        section {
-            padding: 6rem 2rem;
-        }
-
-        .container {
-            max-width: 1100px;
-            margin: 0 auto;
-        }
-
-        .section-header {
-            text-align: center;
-            margin-bottom: 4rem;
-        }
-
-        .section-eyebrow {
-            font-size: 0.8rem;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.2em;
-            color: var(--color-accent);
-            margin-bottom: 1rem;
-        }
-
-        .section-title {
-            font-family: var(--font-display);
-            font-size: clamp(2rem, 4vw, 3rem);
-            font-weight: 500;
-            line-height: 1.2;
-            letter-spacing: -0.02em;
-        }
-
-        /* Provocation Section */
         .provocation {
             background: var(--color-ink);
             color: var(--color-paper);
@@ -268,10 +139,7 @@
             margin: 0 auto;
         }
 
-        /* Services Section */
-        .services {
-            background: var(--color-paper);
-        }
+        .services { background: var(--color-paper); }
 
         .services-grid {
             display: grid;
@@ -318,7 +186,6 @@
             color: var(--color-accent);
         }
 
-        /* Topics Section */
         .rbr-feature {
             padding: 6rem 2rem;
             background: var(--color-ink);
@@ -330,9 +197,7 @@
             margin: 0 auto;
         }
 
-        .rbr-feature .section-eyebrow {
-            color: var(--color-accent);
-        }
+        .rbr-feature .section-eyebrow { color: var(--color-accent); }
 
         .rbr-feature-title {
             font-family: var(--font-display);
@@ -348,24 +213,15 @@
             font-size: 1.15rem;
             font-weight: 300;
             line-height: 1.8;
-            color: rgba(250, 249, 247, 0.75);
+            color: rgba(250,249,247,0.75);
             margin-bottom: 2.5rem;
             max-width: 600px;
         }
 
-        .rbr-feature .hero-cta {
-            color: var(--color-paper);
-            border-color: var(--color-paper);
-        }
+        .rbr-feature .hero-cta { color: var(--color-paper); border-color: var(--color-paper); }
+        .rbr-feature .hero-cta:hover { color: var(--color-accent); border-color: var(--color-accent); }
 
-        .rbr-feature .hero-cta:hover {
-            color: var(--color-accent);
-            border-color: var(--color-accent);
-        }
-
-        .topics {
-            background: #f5f3ef;
-        }
+        .topics { background: #f5f3ef; }
 
         .topics-grid {
             display: grid;
@@ -376,7 +232,7 @@
 
         .topic-card {
             background: var(--color-paper);
-            padding: 3rem;
+            padding: 2rem;
             border: 1px solid var(--color-rule);
             transition: all 0.3s ease;
             text-decoration: none;
@@ -390,9 +246,18 @@
             box-shadow: 0 12px 40px rgba(0,0,0,0.08);
         }
 
-        .topic-card.featured {
-            grid-column: span 2;
+        .topic-card.featured { grid-column: span 1; }
+
+        /* Hero entrance animations */
+        .hero-content > * {
+            animation: fadeInUp 0.8s ease forwards;
+            opacity: 0;
         }
+
+        .hero-eyebrow { animation-delay: 0.1s; }
+        .hero-title { animation-delay: 0.2s; }
+        .hero-subtitle { animation-delay: 0.3s; }
+        .hero-cta { animation-delay: 0.4s; }
 
         .topic-number {
             font-family: var(--font-display);
@@ -429,15 +294,9 @@
             gap: 0.5rem;
         }
 
-        .topic-card:hover .topic-link {
-            color: var(--color-accent);
-            gap: 0.75rem;
-        }
+        .topic-card:hover .topic-link { color: var(--color-accent); gap: 0.75rem; }
 
-        .topics-footer {
-            text-align: center;
-            margin-top: 3rem;
-        }
+        .topics-footer { text-align: center; margin-top: 3rem; }
 
         .all-insights-link {
             font-size: 0.9rem;
@@ -452,41 +311,9 @@
             transition: all 0.3s ease;
         }
 
-        .all-insights-link:hover {
-            background: var(--color-ink);
-            color: var(--color-paper);
-        }
+        .all-insights-link:hover { background: var(--color-ink); color: var(--color-paper); }
 
-        /* About Section */
-        .about {
-            background: var(--color-paper);
-        }
-
-        .about-content {
-            display: grid;
-            grid-template-columns: 350px 1fr;
-            gap: 5rem;
-            align-items: start;
-        }
-
-        .about-image {
-            position: relative;
-        }
-
-        .about-image img {
-            width: 100%;
-            aspect-ratio: 4/5;
-            object-fit: cover;
-            filter: grayscale(20%);
-        }
-
-        .about-image::after {
-            content: '';
-            position: absolute;
-            inset: 1rem -1rem -1rem 1rem;
-            border: 1px solid var(--color-accent);
-            z-index: -1;
-        }
+        .about { background: var(--color-paper); }
 
         .about-text h2 {
             font-family: var(--font-display);
@@ -503,16 +330,7 @@
             margin-bottom: 1.5rem;
         }
 
-        .about-text p strong {
-            color: var(--color-ink);
-            font-weight: 500;
-        }
-
-        .about-credentials {
-            margin-top: 2rem;
-            padding-top: 2rem;
-            border-top: 1px solid var(--color-rule);
-        }
+        .about-text p strong { color: var(--color-ink); font-weight: 500; }
 
         .about-credentials h3 {
             font-size: 0.85rem;
@@ -523,236 +341,27 @@
             margin-bottom: 1rem;
         }
 
-        .about-credentials ul {
-            list-style: none;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 0.5rem;
-        }
-
-        .about-credentials li {
-            font-size: 0.95rem;
-            color: var(--color-muted);
-            padding-left: 1rem;
-            position: relative;
-        }
-
-        .about-credentials li::before {
-            content: '—';
-            position: absolute;
-            left: 0;
-            color: var(--color-rule);
-        }
-
-        /* Contact Section */
-        .contact {
-            background: var(--color-ink);
-            color: var(--color-paper);
-            text-align: center;
-        }
-
-        .contact .section-eyebrow {
-            color: rgba(255,255,255,0.5);
-        }
-
-        .contact .section-title {
-            color: var(--color-paper);
-            margin-bottom: 1rem;
-        }
-
-        .contact-subtitle {
-            font-size: 1.1rem;
-            font-weight: 300;
-            opacity: 0.7;
-            margin-bottom: 3rem;
-        }
-
-        .contact-methods {
-            display: flex;
-            justify-content: center;
-            gap: 4rem;
-            flex-wrap: wrap;
-        }
-
-        .contact-method {
-            text-align: center;
-        }
-
-        .contact-method-label {
-            font-size: 0.75rem;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.15em;
-            opacity: 0.5;
-            margin-bottom: 0.5rem;
-        }
-
-        .contact-method a {
-            font-family: var(--font-display);
-            font-size: 1.25rem;
-            color: var(--color-paper);
-            text-decoration: none;
-            transition: opacity 0.2s ease;
-        }
-
-        .contact-method a:hover {
-            opacity: 0.7;
-        }
-
-        /* Footer */
-        footer {
-            background: var(--color-ink);
-            color: var(--color-paper);
-            padding: 2rem;
-            text-align: center;
-            border-top: 1px solid rgba(255,255,255,0.1);
-        }
-
-        .footer-text {
-            font-size: 0.85rem;
-            opacity: 0.5;
-        }
-
-        .footer-text a {
-            color: inherit;
-            text-decoration: none;
-        }
-
-        /* Mobile Responsive */
         @media (max-width: 1024px) {
-            .hero {
-                grid-template-columns: 1fr;
-            }
-
-            .hero-content {
-                padding: 6rem 2rem 4rem;
-                order: 2;
-            }
-
-            .hero-image {
-                height: 50vh;
-                order: 1;
-            }
-
-            .services-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .topics-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .topic-card.featured {
-                grid-column: span 1;
-            }
-
-            .about-content {
-                grid-template-columns: 1fr;
-                gap: 3rem;
-            }
-
-            .about-image {
-                max-width: 350px;
-            }
-
-            .about-credentials ul {
-                grid-template-columns: 1fr;
-            }
+            .hero { grid-template-columns: 1fr; }
+            .hero-content { padding: 6rem 2rem 4rem; order: 2; }
+            .hero-image { height: 50vh; order: 1; }
+            .services-grid { grid-template-columns: 1fr; }
+            .topics-grid { grid-template-columns: 1fr; }
+            .topic-card.featured { grid-column: span 1; }
         }
 
         @media (max-width: 768px) {
-            nav {
-                padding: 1rem;
-            }
-
-            .nav-links {
-                position: fixed;
-                top: 60px;
-                left: 0;
-                right: 0;
-                background: var(--color-paper);
-                flex-direction: column;
-                padding: 2rem;
-                gap: 1.5rem;
-                border-bottom: 1px solid var(--color-rule);
-                transform: translateY(-100%);
-                opacity: 0;
-                pointer-events: none;
-                transition: all 0.3s ease;
-            }
-
-            .nav-links.active {
-                transform: translateY(0);
-                opacity: 1;
-                pointer-events: all;
-            }
-
-            .nav-toggle {
-                display: flex;
-            }
-
-            .hero-content {
-                padding: 5rem 1.5rem 3rem;
-            }
-
-            section {
-                padding: 4rem 1.5rem;
-            }
-
-            .topic-card {
-                padding: 2rem;
-            }
-
-            .contact-methods {
-                flex-direction: column;
-                gap: 2rem;
-            }
+            .hero-content { padding: 5rem 1.5rem 3rem; }
         }
-
-        /* Animations */
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .hero-content > * {
-            animation: fadeInUp 0.8s ease forwards;
-            opacity: 0;
-        }
-
-        .hero-eyebrow { animation-delay: 0.1s; }
-        .hero-title { animation-delay: 0.2s; }
-        .hero-subtitle { animation-delay: 0.3s; }
-        .hero-cta { animation-delay: 0.4s; }
     </style>
 </head>
 <body>
-    <nav id="nav">
-        <a href="index.html" class="nav-brand"><img src="logo.png" alt="Revive ERM" class="nav-logo"></a>
-        <ul class="nav-links" id="navLinks">
-            <li><a href="#services">Services</a></li>
-            <li><a href="right-brained-risk.html">Right-Brained Risk</a></li>
-            <li><a href="insights.html">Insights</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-        <div class="nav-toggle" id="navToggle" onclick="toggleNav()">
-            <span></span>
-            <span></span>
-            <span></span>
-        </div>
-    </nav>
+    <script src="nav.js"></script>
 
     <section class="hero">
         <div class="hero-content">
-            <p class="hero-eyebrow">Interim CRO & Risk Advisory</p>
-            <h1 class="hero-title">ERM redesigned to deliver value — <em>now</em>.</h1>
+            <p class="hero-eyebrow">Interim CRO &amp; Risk Advisory</p>
+            <h1 class="hero-title">ERM redesigned to deliver value &#8212; <em>now</em>.</h1>
             <p class="hero-subtitle">No more check-the-box programs that set eyes rolling. Enterprise risk management that works for boards and CEOs.</p>
             <a href="#contact" class="hero-cta">
                 Start a conversation
@@ -769,8 +378,8 @@
     <section class="provocation" id="provocation">
         <div class="container">
             <div class="provocation-content">
-                <p class="provocation-question">"Why do sophisticated senior risk professionals keep missing what's coming?"</p>
-                <p class="provocation-answer">They're trapped in left-brain frameworks — quantitative models, historical data, regulatory checklists — while the risks that matter most emerge in conditions of turbulence, uncertainty, novelty, and ambiguity. You can't model your way out of that. You have to see it.</p>
+                <p class="provocation-question">&#8220;Why do sophisticated senior risk professionals keep missing what&#8217;s coming?&#8221;</p>
+                <p class="provocation-answer">They&#8217;re trapped in left-brain frameworks &#8212; quantitative models, historical data, regulatory checklists &#8212; while the risks that matter most emerge in conditions of turbulence, uncertainty, novelty, and ambiguity. You can&#8217;t model your way out of that. You have to see it.</p>
             </div>
         </div>
     </section>
@@ -780,7 +389,7 @@
             <div class="rbr-feature-content">
                 <p class="section-eyebrow">The Framework</p>
                 <h2 class="rbr-feature-title">Right-Brained Risk</h2>
-                <p class="rbr-feature-text">Most risk failures aren't failures of data or frameworks. They're failures of attention — the capacity to see what's emerging before it fits the model. Right-Brained Risk is the practice of building that capacity into ERM programs and the people who run them.</p>
+                <p class="rbr-feature-text">Most risk failures aren&#8217;t failures of data or frameworks. They&#8217;re failures of attention &#8212; the capacity to see what&#8217;s emerging before it fits the model. Right-Brained Risk is the practice of building that capacity into ERM programs and the people who run them.</p>
                 <a href="right-brained-risk.html" class="hero-cta">
                     Explore Right-Brained Risk
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
@@ -801,19 +410,19 @@
                 <div class="service-card">
                     <p class="service-number">01</p>
                     <h3 class="service-title">Foundational ERM Builds</h3>
-                    <p class="service-description">Fix inadequate, poorly documented programs. Governance frameworks, risk registers, board reporting, regulatory documentation — the foundational infrastructure that earns credibility. Proven templates refined across engagements at SEI, WPS, Vanguard, and beyond.</p>
+                    <p class="service-description">Fix inadequate, poorly documented programs. Governance frameworks, risk registers, board reporting, regulatory documentation &#8212; the foundational infrastructure that earns credibility. Proven templates refined across engagements at SEI, WPS, Vanguard, and beyond.</p>
                     <p class="service-format">Interim CRO or project basis</p>
                 </div>
                 <div class="service-card">
                     <p class="service-number">02</p>
-                    <h3 class="service-title">Team Coaching & Development</h3>
-                    <p class="service-description">Build your team's capacity for right-brained risk — the broad, vigilant attention that sees emerging threats before they materialize. Cross-disciplinary thinking, scenario planning, and the courage to name uncomfortable truths.</p>
+                    <h3 class="service-title">Team Coaching &amp; Development</h3>
+                    <p class="service-description">Build your team&#8217;s capacity for right-brained risk &#8212; the broad, vigilant attention that sees emerging threats before they materialize. Cross-disciplinary thinking, scenario planning, and the courage to name uncomfortable truths.</p>
                     <p class="service-format">Workshops and coaching engagements</p>
                 </div>
                 <div class="service-card">
                     <p class="service-number">03</p>
                     <h3 class="service-title">Emerging Risk Engagements</h3>
-                    <p class="service-description">Targeted analysis of specific emerging risks your current framework doesn't capture. AI and grid capacity. Digital supply chain exposure. Geopolitical scenario planning. The unseen risks that require outside perspective.</p>
+                    <p class="service-description">Targeted analysis of specific emerging risks your current framework doesn&#8217;t capture. AI and grid capacity. Digital supply chain exposure. Geopolitical scenario planning. The unseen risks that require outside perspective.</p>
                     <p class="service-format">Focused advisory projects</p>
                 </div>
             </div>
@@ -829,36 +438,21 @@
             <div class="topics-grid">
                 <a href="offshore-it-risk.html" class="topic-card featured">
                     <p class="topic-number">New</p>
-                    <h3 class="topic-title">Your Offshore IT Provider's Business Model Is Breaking. Your Vendor Risk Program Isn't Watching.</h3>
-                    <p class="topic-excerpt">India's tech sector shed over 100,000 jobs in 2025. The cuts are concentrated in mid- and senior-level roles — the people who understood your environment. Nobody's tracking which of that knowledge applies to your systems.</p>
-                    <span class="topic-link">
-                        Read more
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                        </svg>
-                    </span>
+                    <h3 class="topic-title">Your Offshore IT Provider&#8217;s Business Model Is Breaking. Your Vendor Risk Program Isn&#8217;t Watching.</h3>
+                    <p class="topic-excerpt">India&#8217;s tech sector shed over 100,000 jobs in 2025. The cuts are concentrated in mid- and senior-level roles &#8212; the people who understood your environment. Nobody&#8217;s tracking which of that knowledge applies to your systems.</p>
+                    <span class="topic-link">Read more <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg></span>
                 </a>
                 <a href="grid-risk.html" class="topic-card">
                     <p class="topic-number">02</p>
-                    <h3 class="topic-title">Your Cloud Infrastructure Runs on a Grid That Wasn't Built for AI. Your Contracts Don't Cover What Happens Next.</h3>
-                    <p class="topic-excerpt">Trading systems, policy administration, and claims processing run on cloud infrastructure in grid markets facing structural stress this summer. The cloud contract, business continuity plan, and business interruption insurance policy weren't written to work together. When the grid fails, they work against each other.</p>
-                    <span class="topic-link">
-                        Read more
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                        </svg>
-                    </span>
+                    <h3 class="topic-title">Your Cloud Infrastructure Runs on a Grid That Wasn&#8217;t Built for AI. Your Contracts Don&#8217;t Cover What Happens Next.</h3>
+                    <p class="topic-excerpt">Trading systems, policy administration, and claims processing run on cloud infrastructure in grid markets facing structural stress this summer. The cloud contract, business continuity plan, and business interruption insurance policy weren&#8217;t written to work together. When the grid fails, they work against each other.</p>
+                    <span class="topic-link">Read more <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg></span>
                 </a>
                 <a href="agentic-ai-risk.html" class="topic-card">
                     <p class="topic-number">03</p>
                     <h3 class="topic-title">Agentic AI Is in Pilot Across Your Business. How Does the Risk Function Ride Alongside?</h3>
-                    <p class="topic-excerpt">Asset managers, banks, and health insurers are running agentic AI pilots in reconciliation, claims administration, and fraud detection. Gatekeeper and oracle postures don't fit. The sidecar posture does — if the risk function is willing to ride alongside the work.</p>
-                    <span class="topic-link">
-                        Read more
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                        </svg>
-                    </span>
+                    <p class="topic-excerpt">Asset managers, banks, and health insurers are running agentic AI pilots in reconciliation, claims administration, and fraud detection. Gatekeeper and oracle postures don&#8217;t fit. The sidecar posture does &#8212; if the risk function is willing to ride alongside the work.</p>
+                    <span class="topic-link">Read more <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg></span>
                 </a>
             </div>
             <div class="topics-footer">
@@ -875,14 +469,14 @@
                 </div>
                 <div class="about-text">
                     <h2>Susan Ramonat</h2>
-                    <p><strong>15 years building ERM programs</strong> across asset management, investment processing, fund administration, health insurance, and life insurance. The common thread: organizations where the basics weren't working and the emerging risks weren't visible.</p>
-                    <p>Over nearly 20 years at SEI Investments, Susan served in a variety of roles including Head of Enterprise Risk Management. She has held senior risk positions at Vanguard and WPS Health Solutions, and served on the Investment Company Institute's CRO Committee.</p>
+                    <p><strong>15 years building ERM programs</strong> across asset management, investment processing, fund administration, health insurance, and life insurance. The common thread: organizations where the basics weren&#8217;t working and the emerging risks weren&#8217;t visible.</p>
+                    <p>Over nearly 20 years at SEI Investments, Susan served in a variety of roles including Head of Enterprise Risk Management. She has held senior risk positions at Vanguard and WPS Health Solutions, and served on the Investment Company Institute&#8217;s CRO Committee.</p>
                     <p>Known for her foresight and pragmatism, Susan speaks frequently at industry conferences and universities about risk management, emerging technology, and the intersection of strategic and operational risk.</p>
                     <div class="about-credentials">
                         <h3>Background</h3>
                         <ul>
-                            <li>Loyola University, Quinlan School of Business — Risk Management and Insurance Center Advisory Board</li>
-                            <li>Delivered presentations to and worked with teams at Shared Assessments and Vanguard's Global Risk Strategy Division</li>
+                            <li>Loyola University, Quinlan School of Business &#8212; Risk Management and Insurance Center Advisory Board</li>
+                            <li>Delivered presentations to and worked with teams at Shared Assessments and Vanguard&#8217;s Global Risk Strategy Division</li>
                             <li>ICI CRO Committee</li>
                             <li>MIT Sloan Executive Education</li>
                             <li>Princeton University</li>
@@ -896,7 +490,7 @@
     <section class="contact" id="contact">
         <div class="container">
             <p class="section-eyebrow">Get Started</p>
-            <h2 class="section-title">Let's talk</h2>
+            <h2 class="section-title">Let&#8217;s talk</h2>
             <p class="contact-subtitle">Interim CRO engagements. ERM program redesign. Board risk advisory.</p>
             <div class="contact-methods">
                 <div class="contact-method">
@@ -911,46 +505,6 @@
         </div>
     </section>
 
-    <footer>
-        <p class="footer-text">Revive ERM is a wholly owned subsidiary of <a href="#">Spiritus Partners, Inc.</a> &copy; 2026. All rights reserved.</p>
-    </footer>
-
-    <script>
-        // Navigation scroll effect
-        window.addEventListener('scroll', () => {
-            const nav = document.getElementById('nav');
-            if (window.scrollY > 50) {
-                nav.classList.add('scrolled');
-            } else {
-                nav.classList.remove('scrolled');
-            }
-        });
-
-        // Mobile navigation toggle
-        function toggleNav() {
-            document.getElementById('navLinks').classList.toggle('active');
-        }
-
-        // Close mobile nav on link click
-        document.querySelectorAll('.nav-links a').forEach(link => {
-            link.addEventListener('click', () => {
-                document.getElementById('navLinks').classList.remove('active');
-            });
-        });
-
-        // Smooth scroll for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
-        });
-    </script>
+    <script src="footer.js"></script>
 </body>
 </html>
