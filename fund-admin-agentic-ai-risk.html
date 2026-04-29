@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en" data-nav-active="insights" style="color-scheme: light; background:#faf9f7; color:#1a1a1a;">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>When the Platform Moves, Every Fund Moves With It | Revive ERM</title>
+  <meta name="description" content="The sidecar posture for agentic AI risk in fund administration and 40 Act operations. When a fund administrator deploys agentic AI into shared infrastructure, the controls framework does not protect one firm. It protects every fund the platform serves.">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Source+Sans+3:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body style="background:#faf9f7; color:#1a1a1a;">
+
+  <!-- Navigation injected by nav.js -->
+  <nav id="main-nav" aria-label="Main navigation">
+    <a href="index.html" class="nav-brand" aria-label="Revive ERM home">
+      <img src="assets/revive-erm-logo.svg" alt="Revive ERM" class="nav-logo">
+    </a>
+    <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="nav-links">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links" id="nav-links"></ul>
+  </nav>
+
+  <!-- Article Header -->
+  <header class="article-header">
+    <div class="article-meta">
+      <span class="article-category">AI Risk</span>
+    </div>
+    <h1 class="article-title">When the Platform Moves, Every Fund Moves With It</h1>
+    <p class="article-subtitle">The sidecar posture for agentic AI risk in fund administration and 40&nbsp;Act operations</p>
+  </header>
+
+  <!-- Article Body -->
+  <article class="article-content">
+
+    <!-- TLDR -->
+    <div class="tldr">
+      <div class="tldr-label">TL;DR</div>
+      <p>Fund administrators and 40&nbsp;Act servicing platforms running agentic AI pilots are not running a single-firm risk. They are running a platform risk — across every client fund simultaneously. The controls framework that arrives at production with credibility was built during the pilot window. The one that arrives late gets retrofitted against production behavior, across every fund on the platform, at the same time.</p>
+    </div>
+
+    <!-- Opening — no header -->
+    <p>Fund administration is not a single-firm problem.</p>
+
+    <p>When a fund administrator deploys an agentic AI agent into NAV exception flagging or transfer agency triage, it deploys into shared infrastructure that runs the same workflow across hundreds of client funds simultaneously. The pilot is not contained to one firm's risk. It runs across every fund on the platform. The controls framework that arrives at production late does not leave one firm exposed. It leaves the platform exposed — and every fund that depends on it.</p>
+
+    <p>The <a href="agentic-ai-risk.html">sidecar posture described here</a> applies to fund administration with that harder constraint at its center. What follows maps it to the specific operational reality of fund administrators, 40&nbsp;Act boards, and the regulatory obligations that do not pause for platform maturation.</p>
+
+    <!-- Section 1 -->
+    <h2>The Same Three Horizons. A Different Stakes Profile.</h2>
+
+    <p>The three horizons that define the transition — agents as functional contributors, agents as workflow orchestrators, agents that redesign workflows — hold in fund administration as they hold in investment management and insurance. <a href="agentic-ai-risk.html">The structure of that transition is described here.</a> What changes in fund administration is the weight carried at each stage.</p>
+
+    <h3>Horizon one</h3>
+    <p>Agents work within discrete tasks inside existing operational workflows. NAV exception flagging. Transfer agency queue triage. AML alert pre-screening. Reconciliation review. The workflow's shape is intact. Human checkpoints remain at every boundary. The difference from a single-firm deployment: the agent's task in a platform environment touches the same process across hundreds of client funds simultaneously. A behavioral drift that would be a localized error in a single-firm deployment is a systemic error in a platform. One model. Hundreds of funds. One drift event.</p>
+
+    <h3>Horizon two</h3>
+    <p>The agent graduates from contributor to orchestrator. It now manages end-to-end processing for NAV, reconciliation, or transfer agency workflows and their handoffs to custodians, prime brokers, and compliance functions. The 40&nbsp;Act's requirements for board oversight, fiduciary accountability, and Reg S-P investor data protection do not bend to the orchestrator model. The controls framework that was adequate at horizon one is materially insufficient here. The fund board has not changed its oversight expectations. The agent has changed what it owns.</p>
+
+    <h3>Horizon three</h3>
+    <p>The deepest transition for fund administrators is not the redesign of their own internal workflows. It is the redesign of the inter-firm handoffs that connect fund administrators to custodians, fund accountants, and transfer agents. These handoffs are load-bearing. They carry decades of accretion from regulatory findings, legacy system limitations, and operational workarounds. Agents that redesign them will produce outcomes the counterparty's controls framework was not built to handle — because that framework was built for the handoff that no longer exists.</p>
+
+    <div class="callout">
+      A framework built for horizon one cannot protect the business at horizon two. A framework built for horizon two cannot see horizon three approaching. In fund administration, that gap runs across every client on the platform.
+    </div>
+
+    <!-- Section 2 -->
+    <h2>The Maturation Map as a Field Guide</h2>
+
+    <p>The framework below makes the transition visible. Four deployment stages across the top. Four dimensions down the left side. Each cell describes where the capability sits and what the controls obligation is before moving one column to the right.</p>
+
+    <!-- Graphic -->
+    <figure style="margin: 2rem calc(-1 * var(--space-sm));">
+      <img
+        src="assets/Agentic-AI_Maturation-and-Controls-Design_Apr2026.jpg"
+        alt="Agentic AI Maturation Map showing Agency Level, PII Exposure, Task Scope, and Controls Design across Pilot, Limited Production, Production, and Scaled Production stages"
+        width="1400"
+        height="600"
+        loading="lazy"
+        style="width:100%; height:auto; display:block;">
+      <figcaption style="font-size:0.82rem; color:var(--color-muted); margin-top:0.75rem; padding: 0 var(--space-sm); text-align:center; font-style:italic;">
+        Agentic AI Maturation Map — Agency × PII × Task Scope × Controls Design across Deployment Stages
+      </figcaption>
+    </figure>
+
+    <p>Read it as a field guide, not a deliverable. The sidecar risk function uses it to answer one question at any given moment: where are we on each axis, and what does the controls design row require before the capability moves one stage to the right?</p>
+
+    <p>In fund administration, the controls design row is not optional at any stage. Model Risk Management intake under Federal Reserve SR&nbsp;11-7 standards begins at pilot — not at production. The Data Protection Impact Assessment and Human-in-the-Loop checkpoint documentation happen before anonymized investor PII enters the agent's context. Full Model Risk Approval and SEC Reg S-P compliance posture are production entry requirements. Automated Decision-Making Technology disclosure and board-level reporting are built during scaled production. None of these are post-production retrofits. Each is a readiness gate for the stage that follows it.</p>
+
+    <div class="callout">
+      The controls design row is a readiness gate, not a documentation checklist. Each stage requires the controls from the previous stage to be operating before the next stage begins.
+    </div>
+
+    <!-- Section 3 -->
+    <h2>The Gatekeeper and the Oracle Fail Here Too — Faster</h2>
+
+    <p>The <a href="agentic-ai-risk.html">gatekeeper and oracle failure modes</a> play out in fund operations as they do elsewhere. They fail faster here for one reason: the fund administrator's client base amplifies both failures. A gatekeeper that slows pilots trains the business to route around the risk function at a firm. A gatekeeper that slows pilots at a platform administrator trains dozens of client firms to route around it simultaneously.</p>
+
+    <p>There is a third failure mode the published sidecar post does not address: the third-party service provider trap. Fund administrators are simultaneously a technology platform, a service provider to registered funds, and an operational counterparty to custodians and prime brokers. When agentic AI is deployed in that context, the risk function is not just governing a tool. It is governing a tool whose behavior becomes part of the service delivery obligation under client agreements and fund board oversight expectations. The gatekeeper delays that delivery. The oracle misrepresents it. Neither posture belongs in front of a fund board risk committee.</p>
+
+    <!-- Section 4 -->
+    <h2>What the Sidecar Risk Function Is Actually Watching</h2>
+
+    <p>The sidecar posture runs iteratively across four things in fund administration. These are not a framework. They are the observations that build the framework while there is still time for it to matter.</p>
+
+    <h3>The human checkpoints</h3>
+    <p>Identify every human checkpoint currently active in the pilot. Name the role, the task, and what the checkpoint is actually doing. This is not administrative documentation. It is the baseline against which the controls framework tracks what changes as agents graduate from single-task contributor to orchestrator. In fund operations, the critical checkpoints sit at the fund board boundary, the Reg S-P investor data boundary, and the counterparty handoff boundary. If those checkpoints are not documented now, the controls framework built later will not know what it is replacing.</p>
+
+    <h3>What the agent actually touches</h3>
+    <p>The PII axis on the maturation map — synthetic data through anonymized PII, live transactional PII, to behavioral and predictive augmentation — is the actual sequence of what agents will access as confidence and scope grow across the platform. The sidecar risk function maps PII exposure from observation, not from a data dictionary. What did the agent retrieve? From which system? Under whose authorization? Across how many client funds? These questions cannot be answered retrospectively against millions of beneficial owners' data.</p>
+
+    <h3>Scope at the task level</h3>
+    <p>The biggest risk in fund operations is not what the agent does wrong on the task it was assigned. It is what the agent does on the adjacent task no one assigned it. Scope creep at the task level precedes scope creep at the workflow level, which precedes the redesign of workflows the fund board never reviewed. The sidecar risk function catches it at the task level. That is the only place it can be caught before it hardens into production behavior.</p>
+
+    <h3>Leading indicators, not lagging ones</h3>
+    <p>Conventional risk measures — losses, errors, incidents — arrive too late to help while pilots are the frontier. The leading indicators that hold value are the ones that catch drift, unevenness, and capability erosion before they surface as losses. Agent output variance across adjacent tasks. Human checkpoint override rates. PII access outside documented scope. These are not easy to define. They are also the only indicators that matter while the pilots are still pilots.</p>
+
+    <div class="callout-question">
+      Conventional risk assessments assume a stable end state. Pilots have none. The sidecar risk function produces assessments as working documents — revised as scope expands, not completed when scope is defined.
+    </div>
+
+    <!-- Section 5 -->
+    <h2>The RPA Memory, Platform Edition</h2>
+
+    <p>Fund administration ran a version of this before.</p>
+
+    <p>Robotic process automation arrived in the 2014–2018 window with the same arc: modest pilots in NAV processing and transfer agency, growing confidence, function-by-function expansion into production. RPA ran on rules, behaved deterministically, and offered auditability. It still produced durable governance failures. Bots broke when underlying systems changed. Error surfaces went unnoticed until losses accumulated. Accountability blurred when automation drifted from what it was supposed to do. <a href="agentic-ai-risk.html">The RPA comparison holds across fund operations.</a></p>
+
+    <p>The specific failure in the platform environment was accountability blur at scale. When a reconciliation bot drifted from expected behavior, the question of who was accountable — the fund administrator, the technology vendor, or the fund board that approved the operational outsourcing arrangement — took longer to resolve than the error it produced. The answer was never fully clean.</p>
+
+    <p>Agentic AI is the harder version. Behavior runs non-deterministically. Capability boundaries shift across model versions. Vendor updates beyond the fund administrator's control change what the agent can do without a change notice. The controls framework built for a static model does not hold for a model that drifts. The sidecar risk function documents accountability at every checkpoint during the pilot — not after the first incident.</p>
+
+    <div class="callout">
+      RPA drifted and accountability blurred. Agentic AI drifts non-deterministically, at platform scale, across model versions the fund administrator does not control. Document the accountability now. The pilot window is the only time that documentation is cheap.
+    </div>
+
+    <!-- Section 6 -->
+    <h2>What the SEC Is Already Looking For</h2>
+
+    <p>The SEC's 2026 Division of Examinations priorities name AI as a cross-cutting risk area for all registered investment advisers and fund operators. Examiners are checking whether disclosed AI practices match actual AI practices. For most fund administrators in limited production, they do not yet match.</p>
+
+    <p><strong>Form N-CEN and ADV disclosure gaps.</strong> Current disclosure forms were not designed for agentic AI in fund operations. The gap between what agents are doing on the platform and what is disclosed to fund boards and the SEC becomes a material deficiency at examination — not a technical oversight.</p>
+
+    <p><strong>Reg S-P and investor PII.</strong> Reg S-P obligations apply the moment live PII enters the agent's context. The sidecar risk function that mapped PII exposure during the pilot has the documentation the examiner will ask for. The one that did not map it is reconstructing from memory under examination pressure.</p>
+
+    <p><strong>Fiduciary accountability in automated workflows.</strong> The 40&nbsp;Act imposes board-level fiduciary responsibility for fund operations. When an agent owns an end-to-end workflow, the question of which human remains accountable to the board requires an answer built during the pilot — not one constructed in response to an examination request.</p>
+
+    <div class="callout-question">
+      The SEC is not waiting for agentic AI to reach scaled production before examining it. The examination question is whether disclosed practices match actual practices — right now, at the pilot stage.
+    </div>
+
+    <!-- Section 7 — Closing -->
+    <h2>The Window, Platform Edition</h2>
+
+    <p>The pilot window offers the lowest-cost moment to develop the risk assessments, leading indicators, and controls framework that will hold at production scale. <a href="agentic-ai-risk.html">The framework need not be complete to be useful. It must move at the same pace as the capability.</a> In fund administration, it must move at the same pace across every client the platform serves.</p>
+
+    <p>When the window closes in fund administration, it closes for everyone simultaneously.</p>
+
+    <h3>Ride sidecar with your fund operations agentic AI pilots.</h3>
+
+    <p>Map the PII exposure. Document the human checkpoints. Build the controls framework before the platform moves to production. The window stays open while the pilots are still pilots. In fund administration, when it closes, it closes for everyone.</p>
+
+    <!-- CTA -->
+    <div class="article-cta">
+      <h3>Start a Conversation</h3>
+      <p>Interim CRO engagements. ERM program redesign. Board risk advisory.</p>
+      <a href="index.html#contact" class="cta-button">Get in Touch</a>
+    </div>
+
+  </article>
+
+  <script src="nav.js"></script>
+
+</body>
+</html>
